@@ -93,6 +93,7 @@ lg:max-w-xs
 lg:mx-auto
 lg:normal-case
 lg:outline-none
+lg:p-$1
 lg:rounded
 lg:rounded-full
 lg:rounded-lg
@@ -137,6 +138,7 @@ max-w-xs
 mx-auto
 normal-case
 outline-none
+p-$1
 rounded
 rounded-full
 rounded-lg
@@ -195,6 +197,7 @@ sm:max-w-xs
 sm:mx-auto
 sm:normal-case
 sm:outline-none
+sm:p-$1
 sm:rounded
 sm:rounded-full
 sm:rounded-lg

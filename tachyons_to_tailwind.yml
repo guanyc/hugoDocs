@@ -5,6 +5,7 @@ variants:
 
 # tachyons_class => tailwind_class
 replacements:
+  "pa(\\d+)": "p-$1"
   bw1: "border-2"
   bw2: "border-4"
   ba: "border border-solid"
