@@ -3,7 +3,7 @@ Showcase: {{ .Title }}
 {{ end }}
 
 {{ define "main" }}
-  <article class="mx-auto ph3 ph4-ns pv3 pv5-ns max-w-6xl">
+  <article class="mx-auto ph3 sm:px-4 pv3 pv5-ns max-w-6xl">
 
     <!-- header spans the full width -->
     <div class="flex flex-wrap">
@@ -12,7 +12,7 @@ Showcase: {{ .Title }}
         {{template "sc-details" .}}
       </div>
 
-      <div class="w-full lg:w-3/5 order-0 order-1-l ph4-l">
+      <div class="w-full lg:w-3/5 order-0 order-1-l lg:px-4">
         {{template "sc-main-column" .}}
       </div>
 
@@ -22,7 +22,7 @@ Showcase: {{ .Title }}
 
     </div>
 
-    <div class="text-sm gray mv6">{{/* bottom row */}}
+    <div class="text-sm gray-600 mv6">{{/* bottom row */}}
       Last Update: {{ .Lastmod.Format "January 2, 2006" }} <br>
       {{ partial "page-edit.html" . }}
     </div>
@@ -59,13 +59,13 @@ Showcase: {{ .Title }}
 
 {{define "sc-details"}}
   <div class="mt4 mt0-ns nested-links">
-    <div class="border border-solid b--light-gray bg-white pa3">
+    <div class="border border-solid b--light-gray bg-white p-3">
       <h1 class="f2-fluid mt0">{{.Title}}</h1>
       {{ with .Params.siteURL }}
-      <a href="{{ . }}" class="db f5 mb1">{{ . | replaceRE "^https?://(www\\.)?([^/]+).*" "$2"}} {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
+      <a href="{{ . }}" class="block text-base mb1">{{ . | replaceRE "^https?://(www\\.)?([^/]+).*" "$2"}} {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
       {{ end }}
       {{ with .Params.siteSource }}
-      <a href="{{ . }}" class="db mb4">source {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
+      <a href="{{ . }}" class="block mb4">source {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
       {{ end }}
       {{ $bio := (.Resources.ByType "page").GetMatch "bio*" }}
       {{ with $bio }}
@@ -74,8 +74,8 @@ Showcase: {{ .Title }}
         </div>
       {{ end }}
     </div>
-    <div class="b--light-gray border-t border-solid lg:hidden pt3">
-      <div class="text-sm gray mb2">Previous/Next</div>
+    <div class="b--light-gray border-t border-solid lg:hidden pt-3">
+      <div class="text-sm gray-600 mb-2">Previous/Next</div>
       {{- partial "previous-next-links-in-section-with-title.html" . -}}
     </div>
   </div>
@@ -85,19 +85,19 @@ Showcase: {{ .Title }}
   {{$section := where .Site.RegularPages "Section" .Section}}
   {{$number_of_entries := $section | len}}
   <ul class="pa0 list-reset">
-  <li class="font-bold f5 blTK b--light-gray pb2 pl2">
+  <li class="font-bold text-base blTK b--light-gray pb2 pl2">
       More Sites
   </li>
     {{range first 20 $section}}
       <li class="border-l border-solid b--light-gray pl2 text-sm hover-bg-light-gray hover-accent-color-light {{if eq $ .}} bg-light-gray{{end}}">
-        <a href="{{.RelPermalink}}" class="db link w-full pv1 ph1 {{ if eq $ . }} font-bold  primary-color{{else}} mid-gray {{end}}">
+        <a href="{{.RelPermalink}}" class="block link w-full pv1 ph1 {{ if eq $ . }} font-bold  primary-color{{else}} mid-gray {{end}}">
           {{- .Title -}}
         </a>
       </li>
     {{end}}
     {{if gt $number_of_entries 20}}
       <li class="mt3">
-        <a href="/showcase/page/2/" class="link blue">
+        <a href="/showcase/page/2/" class="link blue-600">
           See More &raquo;
         </a>
       </li>

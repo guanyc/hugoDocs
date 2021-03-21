@@ -1,16 +1,16 @@
 {{ $currentPage := . }}
 {{ $currentURL := .RelPermalink }}
-<header class="ph4 flex pv4 bg-light-gray">
+<header class="px-4 flex py-4 bg-light-gray">
   <ul class="list-reset ma0 pa0 ">
       <!-- TODO: Active classes -->
-      <li class="f5 inline-block mr3 mb3 mb0-ns v-top white">
+      <li class="text-base inline-block mr3 mb-3 sm:mb-0 v-top white">
         <a href="/news/" class="link primary-color-dark dim">
             News:
         </a>
       </li>
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
         {{ $link :=  $name | printf "%s%s" "/categories/" | printf "%s/" }}
-        <li class="f5 inline-block mr3 v-top mr3 mb3 mb0-ns">
+        <li class="text-base inline-block mr3 v-top mr3 mb-3 sm:mb-0">
           <a href="{{ $link }}" class="link {{ if eq $currentURL $link }} bg-primary-color-dark {{ else }} bg-primary-color-dark {{ end }} white ph3 pv1 rounded hover-bg-accent-color-light">
             {{ $name  | humanize }}
           </a>

@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="w-full ph4 ph5-ns pb5 pb6-ns pt1 pt3-ns ">
-  <article class="clearfix pa3 pa4-m pa4-l nested-copy-line-height nested-img">
+<div class="w-full px-4 sm:px-5 pb-5 sm:pb-6 pt-1 sm:pt-3 ">
+  <article class="clearfix p-3 pa4-m lg:p-4 nested-copy-line-height nested-img">
     <h1 class="primary-color-dark">
       {{ .Title }}
     </h1>
@@ -23,8 +23,8 @@
 
 
 {{define "showcase_items"}}
-  <a href="{{.Permalink}}" class="b--moon-gray border border-solid bg-animate bg-white db flex-auto-ns hover-bg-near-white mb3 mr3 w-full w-30-l" style="max-width: 1024px;">
-    <div class="flex flex-column black h-100 mb2 pa3 pa4-l">
+  <a href="{{.Permalink}}" class="b--moon-gray border border-solid bg-animate bg-white block flex-auto-ns hover-bg-near-white mb-3 mr3 w-full w-30-l" style="max-width: 1024px;">
+    <div class="flex flex-column black h-full mb-2 p-3 lg:p-4">
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
       {{ with $img }}
       {{ $big := .Fill "1024x512 top" }}

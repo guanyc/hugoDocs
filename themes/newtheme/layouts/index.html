@@ -4,24 +4,21 @@
 {{ end }}
 
 {{ define "main" }}
-  <section class="w-full ph4 ph5-ns pv4">
+  <section class="w-full px-4 sm:px-5 py-4">
     {{- partial "home-page-sections/features-icons" . -}}
   </section>
-
   {{ partial "home-page-sections/sponsors.html" (dict "cx" . "gtag" "home" ) }}
 
   {{- partial "home-page-sections/features-single" . -}}
 
-  {{- partial "home-page-sections/showcase.html" . -}} 
-
-  <section class="w-full ph4 ph5-ns pv4 pv6-ns mid-gray bg-white border-b border-solid border-t border-solid b--light-gray">
+  {{- partial "home-page-sections/showcase.html" . -}}
+  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 mid-gray bg-white border-b border-t border-solid b--light-gray">
     {{- partial "home-page-sections/installation" . -}}
   </section>
-
-  <section class="w-full ph4 ph5-ns pv4 pv6-ns mid-gray bg-accent-color-dark">
+  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 mid-gray bg-accent-color-dark">
     {{- partial "home-page-sections/tweets" . -}}
   </section>
-  <section class="w-full ph4 ph5-ns pt4 pb5 mid-gray bg-primary-color-light border-b border-solid border-t border-solid b--light-gray ">
+  <section class="w-full px-4 sm:px-5 pt-4 pb-5 mid-gray bg-primary-color-light border-b border-t border-solid b--light-gray ">
     {{- partial "home-page-sections/open-source-involvement" . -}}
   </section>
 {{ end }}

@@ -70,15 +70,14 @@ def replace_classes(file, replacements: {}, exceptions: {})
     line_number = argf.file.lineno
 
     replacements.each do |tachyons_class, tailwind_class|
-
-      next unless classes_to_consider.find { |class_name| tachyons_class.start_with?(class_name) }
-      # old_stdout.puts "Considering #{tachyons_class}"
+      #next unless classes_to_consider.find { |class_name| tachyons_class.start_with?(class_name) }
+      #old_stdout.puts "Considering #{tachyons_class}"
 
       # skip line if in exceptions for the given class name
       ignored_classes = exceptions.dig(filename, tachyons_class)
       next if ignored_classes && (ignored_classes.empty? || ignored_classes.include?(line_number))
-
       next unless line.include?(tachyons_class)
+
 
       # regex for the class name:
       regex = %r{(?<char_before>
@@ -90,6 +89,8 @@ def replace_classes(file, replacements: {}, exceptions: {})
                  (?![-(\[\]/|?!])          # not followed by special chars
                  }x
 
+
+
       next unless line.match(regex)
 
       tw_replacement = tailwind_class
@@ -98,8 +99,8 @@ def replace_classes(file, replacements: {}, exceptions: {})
         tw_replacement = tailwind_class.join(joining_char)
       end
 
-      old_stdout.puts filename unless shown_file
-      old_stdout.puts "  #{line_number}: #{tachyons_class} ⟶ #{tw_replacement}"
+      #old_stdout.puts filename unless shown_file
+      #old_stdout.puts "  #{line_number}: #{tachyons_class} ⟶ #{tw_replacement}"
 
       line.gsub!(regex, "\\k<char_before>#{tw_replacement}")
 
@@ -153,12 +154,13 @@ TEMPLATE_GLOBS.each do |glob|
   file_exceptions = Dir.glob(config["glob_exceptions"])
 
   Dir.glob(glob).each do |file|
-    # puts "Considering #{file}"
+    #puts "Considering #{file}"
     next unless File.file?(file)
     next if file_exceptions.include?(file)
     next unless file_matches?(file)
 
     changes = replace_classes(file, replacements: replacements_with_variants, exceptions: exceptions)
+
     if changes.positive?
       files += 1
       replaced += changes

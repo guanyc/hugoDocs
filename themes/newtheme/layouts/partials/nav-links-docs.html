@@ -3,14 +3,14 @@
   <ul class="list-reset pa0 nl2">
     {{ range .Site.Menus.docs.ByWeight }}
       {{ $post := printf "%s" .Post }}
-      <li class="f5 w-full hover-bg-light-gray hover-accent-color-light fw8{{ if eq $post "break" }} mb1 border-b border-solid b--moon-gray{{ end }}">
-        <a href="{{ if .HasChildren }}javascript:void(0){{ else }}{{ .URL }}{{ end }}" class="js-toggle dib w-full link mid-gray hover-accent-color-light pl2 pr2 pv2 {{if or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) }} primary-color{{end}}" data-target=".{{ .Identifier }}">{{ .Name }}</a>
+      <li class="text-base w-full hover-bg-light-gray hover-accent-color-light font-extrabold{{ if eq $post "break" }} mb1 border-b border-solid b--moon-gray{{ end }}">
+        <a href="{{ if .HasChildren }}javascript:void(0){{ else }}{{ .URL }}{{ end }}" class="js-toggle inline-block w-full link mid-gray hover-accent-color-light pl2 pr2 pv2 {{if or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) }} primary-color{{end}}" data-target=".{{ .Identifier }}">{{ .Name }}</a>
 
         {{- if .HasChildren }}
-        <ul class="{{ .Identifier }} desktopmenu animated fadeIn list-reset pl0 bg-light-gray{{if $currentPage.HasMenuCurrent "docs" . }} db{{ else }} hidden{{ end }}">
+        <ul class="{{ .Identifier }} desktopmenu animated fadeIn list-reset pl0 bg-light-gray{{if $currentPage.HasMenuCurrent "docs" . }} block{{ else }} hidden{{ end }}">
           {{- range .Children }}
           <li class="text-sm font-normal">
-            <a href="{{.URL}}" class="db link hover-bg-gray hover-white pl3 pr2 pv2 {{if $currentPage.IsMenuCurrent "docs" . }}primary-color {{ else }}black {{end}}">
+            <a href="{{.URL}}" class="block link hover-bg-gray hover-white pl3 pr2 pv2 {{if $currentPage.IsMenuCurrent "docs" . }}primary-color {{ else }}black {{end}}">
               {{ .Name }}
             </a>
           </li>

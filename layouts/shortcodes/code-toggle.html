@@ -12,10 +12,10 @@
 <div class="font-mono relative" {{ with $file }}id="{{ . | urlize}}"{{ end }}>
 	<div class="code-nav flex flex-nowrap items-stretch">
 		{{- with $file -}}
-			<div class="san-serif f6 inline-block leading-none pl2 pv2 mr2">{{ . }}.</div>
+			<div class="san-serif text-sm inline-block leading-none pl2 pv2 mr2">{{ . }}.</div>
 		{{- end -}}
 		{{ range $langs }}
-			<button data-toggle-tab="{{ . }}" class="tab-button {{ cond (eq . "yaml") "active" ""}} border border-solid san-serif f6 inline-block leading-none ph2 pv2">{{ . }}</button>&nbsp;
+			<button data-toggle-tab="{{ . }}" class="tab-button {{ cond (eq . "yaml") "active" ""}} border border-solid san-serif text-sm inline-block leading-none ph2 pv2">{{ . }}</button>&nbsp;
 		{{ end }}
 	</div>
 	<div class="tab-content">
@@ -24,7 +24,7 @@
 				{{ highlight ($code | transform.Remarshal . | safeHTML) . ""}}
 			</div>
 			{{ if ne ($.Get "copy") "false" }}
-				<button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 leading-none hover-bg-primary-color-dark border-0 border-none white ph3 pv2" title="Copy this font-mono to your clipboard." data-clipboard-action="copy" aria-label="copy button">
+				<button class="needs-js copy copy-toggle bg-accent-color-dark text-sm absolute top-0 right-0 leading-none hover-bg-primary-color-dark border-0 border-none white ph3 pv2" title="Copy this font-mono to your clipboard." data-clipboard-action="copy" aria-label="copy button">
 				</button>
 				{{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
 			{{end}}

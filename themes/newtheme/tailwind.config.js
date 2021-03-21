@@ -10,24 +10,26 @@ const em = (px, base) => `${round(px / base)}em`;
 const px = (px) => `${px}px`;
 
 module.exports = {
+	theme: {
+		fontFamily: {
+			...theme.fontFamily,
+			sans: [ 'Mulish', ...theme.fontFamily.sans ]
+		}
+	},
 	important: true, // See https://tailwindcss.com/docs/configuration#important
 	purge: {
 		enabled: process.env.HUGO_ENVIRONMENT === 'production',
-    content: [
-      './hugo_stats.json',
-      './layouts/**/*.html',
-		],
+		content: [ './hugo_stats.json', './layouts/**/*.html' ],
 		extractors: [
-      {
-        extractor: (content) => {
+			{
+				extractor: (content) => {
 					let els = JSON.parse(content).htmlElements;
 					return els.tags.concat(els.classes, els.ids);
 				},
-        extensions: ['json']
-      },
-    ],
-		mode: 'all',
-		
+				extensions: [ 'json' ]
+			}
+		],
+		mode: 'all'
 	},
 	plugins: [ typography ]
 };

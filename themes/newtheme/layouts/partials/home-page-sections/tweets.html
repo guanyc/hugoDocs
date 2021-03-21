@@ -2,7 +2,7 @@
 
   {{ $interior_classes := $.Site.Params.flex_box_interior_classes }}
 
-  <h3 class="f2 fw4 white">See what others are saying about Hugo…</h3>
+  <h3 class="text-4xl font-normal white">See what others are saying about Hugo…</h3>
 
   <div class="flex-ns flex-wrap justify-between">
 
@@ -15,7 +15,7 @@
           <p class="text-xl">
             {{.quote | safeHTML}}
           </p>
-          <cite class="homepage-tweet-attribution gray text-sm">&#9472; {{ .name }} ({{ .twitter_handle }}) <a href="{{ .link }}">
+          <cite class="homepage-tweet-attribution gray-600 text-sm">&#9472; {{ .name }} ({{ .twitter_handle }}) <a href="{{ .link }}">
             {{ dateFormat "January 2, 2006" .date }}</a>
           </cite>
         </blockquote>

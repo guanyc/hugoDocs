@@ -2,7 +2,7 @@
   {{ range .Params.sections }}
   {{ $.Scratch.Add "i" 1 }}{{ $i := $.Scratch.Get "i" }}
 
-    <section class="w-full  ph4 ph5-ns pv4 pv6-ns mid-gray {{ .color_classes }}">
+    <section class="w-full  ph4 sm:px-5 py-4 sm:py-6 mid-gray {{ .color_classes }}">
       <div class="flex-ns flex-wrap mx-auto max-w-6xl">
 
         <div class="w-full w-50-l {{ if modBool $i 2 }}order-1{{ else }}order-0{{ end }}">
@@ -13,7 +13,7 @@
 
         <div class="w-full w-50-l">
           <div class="w-80-ns mx-auto text-center">
-            <h3 class="f1 fw4 black ma0 pt4 lh-title pt0-l">{{ .heading }}</h3>
+            <h3 class="text-5xl font-normal black ma0 pt-4 leading-tight pt0-l">{{ .heading }}</h3>
             <p class="text-2xl leading-normal">
               {{ .copy }}
             </p>

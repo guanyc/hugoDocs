@@ -2,10 +2,9 @@
 <html class="no-js" lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
   <head>
     <meta charset="utf-8">
-    {{/* https://www.zachleat.com/web/preload/ */}}
-    <link rel="preload" href="{{ "fonts/muli-latin-200.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ "fonts/muli-latin-400.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ "fonts/muli-latin-800.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+    {{/* TODO1 self host https://fonts.google.com/specimen/Mulish?preview.text_type=custom */}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;800&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>
