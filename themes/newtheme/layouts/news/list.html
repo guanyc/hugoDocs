@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="w-100 ph4 ph5-ns pb5 pb6-ns pt1 pt3-ns ">
+<div class="w-full ph4 ph5-ns pb5 pb6-ns pt1 pt3-ns ">
 
   <article class="clearfix pa3 pa4-m pa4-l nested-copy-line-height nested-img">
     <h1 class="primary-color-dark">
@@ -14,7 +14,7 @@
 
   <div class="flex flex-wrap">
       {{/* [wip] add archive lists
-      <div class="w-100 w-20-ns dn">
+      <div class="w-full w-20-ns dn">
         <ul>
           <li>
             <a href="#">
@@ -25,7 +25,7 @@
       </div> */}}
 
     {{ $interior_classes := $.Site.Params.flex_box_interior_classes }}
-    <section class="flex-ns flex-wrap justify-between w-100 w-80-nsTK v-top">
+    <section class="flex-ns flex-wrap justify-between w-full w-80-nsTK v-top">
       {{ $paginator := .Paginate (.Pages | lang.Merge (where .Sites.First.RegularPages "Section" .Section)) -}}
       {{ range $paginator.Pages }}
         {{ partial "boxes-section-summaries" (dict "context" . "classes" $interior_classes "fullcontent" false) }}

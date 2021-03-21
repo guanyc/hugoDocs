@@ -1,4 +1,4 @@
-<header class="flex-none w-100">
+<header class="flex-none w-full">
   {{ if .Params.categories }}
     {{ range .Params.categories }}
       <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 fw8 mb0 link mid-gray dim mr3">
@@ -15,9 +15,9 @@
   </h1>
 </header>
 
-<aside class="border-t border-solid border-2 pt3 mt2 mid-gray b--mid-gray fn w-100">
+<aside class="border-t border-solid border-2 pt3 mt2 mid-gray b--mid-gray fn w-full">
   {{ with .Params.description }}
-    <div class="f4 fw4 lh-copy">
+    <div class="text-xl font-normal lh-copy">
       {{ . | markdownify }}
     </div>
   {{ end }}

@@ -1,8 +1,8 @@
 {{ $currentPage := . }}
-<header class="dn-lTK relative clearfix bg-primary-color-dark pl4 w-100 z-5">
+<header class="dn-lTK relative clearfix bg-primary-color-dark pl4 w-full z-5">
   <div class="flexTK items-centerTK dib ">
-    <a class="absolute top-0 left-0 ml4 w4 w4-ns ph3  mr3" href="/">
-      <img src="{{ .Site.Params.logo }}" alt="" class="w-100 shadow-2">
+    <a class="absolute top-0 left-0 ml4 w-32 sm:w-32 ph3  mr3" href="/">
+      <img src="{{ .Site.Params.logo }}" alt="" class="w-full shadow-2">
     </a>
     <a class="f4 f3-ns lh-solid brand-font fw7 link white hover-white no-underline dib mv0 ml6 pl3 mr5" href="/">
      {{ .Site.Title | markdownify  }}

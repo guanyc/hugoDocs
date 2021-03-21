@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
+<div class="w-full ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
     <div class="flex-l">
-        <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+        <div class="order-2 w-full w-20-l ph5-m ph0-l mb4 sticky">
             <aside class="fixed-lTK mw5-l right-0 f6 lg:border-l border-solid b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
                 <p class="font-bold">What's on this Page</p>
                 <ul>
@@ -11,7 +11,7 @@
                 </ul>
             </aside>
         </div>
-        <div class="w-100">
+        <div class="w-full">
             {{ $byLastMod :=  .Site.RegularPages.ByLastmod  }}
             {{ $recent := ($byLastMod | last 30).Reverse }}
             {{ $leastRecent := $byLastMod | first 10 }}            

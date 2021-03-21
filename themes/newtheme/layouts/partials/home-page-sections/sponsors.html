@@ -1,9 +1,9 @@
-{{$classes_box := "border border-solid b--dark-gray bg-light-gray rounded-lg flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l "}}
+{{$classes_box := "border border-solid b--dark-gray bg-light-gray rounded-lg flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-full w-30-l "}}
 {{$gtag := .gtag | default "unknown" }}
 {{ with .cx.Site.Data.sponsors }}
-  <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray border-b border-solid border-t border-solid ph5 pv4 w-100"}}">
-    <div class="center mw9"> 
-      <h3 class="font-bold f3 mv0 light-gray">Hugo Sponsors</h3>
+  <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray border-b border-solid border-t border-solid ph5 pv4 w-full"}}">
+    <div class="center max-w-6xl"> 
+      <h3 class="font-bold text-2xl mv0 light-gray">Hugo Sponsors</h3>
       <div class="flex-ns flex-wrap center justify-between pt3">
         {{ range .banners }}
           {{ $banner := . }}
@@ -18,10 +18,10 @@
                    <a href="{{ $url }}" class="grow">
                 {{ end }}
               {{- end}}
-              <img src="{{ .logo }}" alt="Logo for {{ .name }}" class="img h3 center" />
+              <img src="{{ .logo }}" alt="Logo for {{ .name }}" class="img h-16 center" />
               {{with .link}}</a>{{end}}
               {{with .copy}}
-                <p class="center lh-copy gray mv1 text-center {{$.classes_copy | default "f5 w-70-ns"}}">
+                <p class="center lh-copy gray mv1 text-center {{$.classes_copy | default "text-base w-70-ns"}}">
                   {{- . -}}
                 </p>
               {{end}}
