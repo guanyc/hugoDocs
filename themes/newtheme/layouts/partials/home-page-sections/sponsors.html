@@ -1,9 +1,9 @@
-{{$classes_box := "ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l "}}
+{{$classes_box := "border border-solid b--dark-gray bg-light-gray rounded-lg flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l "}}
 {{$gtag := .gtag | default "unknown" }}
 {{ with .cx.Site.Data.sponsors }}
-  <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray bb bt ph5 pv4 w-100"}}">
+  <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray border-b border-solid border-t border-solid ph5 pv4 w-100"}}">
     <div class="center mw9"> 
-      <h3 class="b f3 mv0 light-gray">Hugo Sponsors</h3>
+      <h3 class="font-bold f3 mv0 light-gray">Hugo Sponsors</h3>
       <div class="flex-ns flex-wrap center justify-between pt3">
         {{ range .banners }}
           {{ $banner := . }}
@@ -21,14 +21,14 @@
               <img src="{{ .logo }}" alt="Logo for {{ .name }}" class="img h3 center" />
               {{with .link}}</a>{{end}}
               {{with .copy}}
-                <p class="center lh-copy gray mv1 tc {{$.classes_copy | default "f5 w-70-ns"}}">
+                <p class="center lh-copy gray mv1 text-center {{$.classes_copy | default "f5 w-70-ns"}}">
                   {{- . -}}
                 </p>
               {{end}}
             </div>
           {{else}}
             <div class="{{$classes_box}} o-10">
-              <p class="b black tc">Your Logo Here</p>
+              <p class="font-bold black text-center">Your Logo Here</p>
             </div>
           {{end}}
         {{end}}

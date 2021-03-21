@@ -1,21 +1,90 @@
-block
-inline
-inline-flex
-lg:block
-lg:inline
-lg:inline-flex
-lg:p-0
-lg:p-0-5
-lg:p-48
-lg:p-64
-p-0
-p-0-5
-p-48
-p-64
-sm:block
-sm:inline
-sm:inline-flex
-sm:p-0
-sm:p-0-5
-sm:p-48
-sm:p-64
+border border-solid
+border-0 border-none
+border-2
+border-4
+border-b border-solid
+border-l border-solid
+border-r border-solid
+border-t border-solid
+capitalize
+clearfix
+float-left
+float-right
+font-bold
+font-mono
+font-sans
+font-serif
+inset-0
+lg:border border-solid
+lg:border-0 border-none
+lg:border-2
+lg:border-4
+lg:border-b border-solid
+lg:border-l border-solid
+lg:border-r border-solid
+lg:border-t border-solid
+lg:capitalize
+lg:clearfix
+lg:float-left
+lg:float-right
+lg:font-bold
+lg:font-mono
+lg:font-sans
+lg:font-serif
+lg:inset-0
+lg:lowercase
+lg:normal-case
+lg:outline-none
+lg:rounded
+lg:rounded-full
+lg:rounded-lg
+lg:rounded-none
+lg:rounded-sm
+lg:text-center
+lg:text-justify
+lg:text-left
+lg:text-right
+lg:uppercase
+lowercase
+normal-case
+outline-none
+rounded
+rounded-full
+rounded-lg
+rounded-none
+rounded-sm
+sm:border border-solid
+sm:border-0 border-none
+sm:border-2
+sm:border-4
+sm:border-b border-solid
+sm:border-l border-solid
+sm:border-r border-solid
+sm:border-t border-solid
+sm:capitalize
+sm:clearfix
+sm:float-left
+sm:float-right
+sm:font-bold
+sm:font-mono
+sm:font-sans
+sm:font-serif
+sm:inset-0
+sm:lowercase
+sm:normal-case
+sm:outline-none
+sm:rounded
+sm:rounded-full
+sm:rounded-lg
+sm:rounded-none
+sm:rounded-sm
+sm:text-center
+sm:text-justify
+sm:text-left
+sm:text-right
+sm:uppercase
+text-center
+text-justify
+text-left
+text-right
+uppercase

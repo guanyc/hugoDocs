@@ -2,7 +2,7 @@
     <div class="center flex-ns flex-wrap justify-between mw9 w-90">
       <div class="pb3 pt4 w-100 w-50-ns">
 
-         <div class="b f3  light-gray mb3 nested-links tc">
+         <div class="font-bold f3  light-gray mb3 nested-links text-center">
            By the <a href="https://github.com/gohugoio/hugo/graphs/contributors" class="link">Hugo Authors</a><br />
           </div>
 
@@ -10,20 +10,20 @@
             <img src="/images/hugo-logo-wide.svg" alt="Hugo Logo">
           </div>
 
-          <ul class="center f6 list ma0 mv3 pa0 tc">
+          <ul class="center f6 list ma0 mv3 pa0 text-center">
             {{- with .Site.Params.github_repo -}}<li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">File an Issue</a></li>{{- end -}}
             {{- with .Site.Params.forum -}}<li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">Get Help</a></li>{{- end -}}
             {{- with .Site.Params.gitter -}}<li class="dib"><a href="{{ . }}" class="dim link light-gray pv2">Discuss Source Code</a></li>{{- end -}}
           </ul>
 
-          <ul class="center f6 list ma0 mv4 pa0 tc">
+          <ul class="center f6 list ma0 mv4 pa0 text-center">
             <li class="dib mr3"><a href="https://twitter.com/gohugoio" class="dim link light-gray pv2">@GoHugoIO</a></li>
             <li class="dib mr3"><a href="https://twitter.com/spf13" class="dim link light-gray pv2">@spf13</a></li>
             <li class="dib"><a href="https://twitter.com/bepsays" class="dim link light-gray pv2">@bepsays</a></li>
           </ul>
 
           {{ with  getenv "REPOSITORY_URL" -}}
-          <p class="center f6 tc w-70"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
+          <p class="center f6 text-center w-70"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
           {{- end }}
 
       </div>

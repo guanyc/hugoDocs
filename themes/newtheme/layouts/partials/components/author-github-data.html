@@ -1,6 +1,6 @@
 {{ $author := .context.Params.author }}
 {{ if $author }}
-  <aside class="mw5 br3 mv3 nested-links">
+  <aside class="mw5 rounded-lg mv3 nested-links">
     {{ $urlPre := "https://api.github.com" }}
     {{ $user_json := getJSON $urlPre "/users/" $author }}
       {{ if $user_json.name }}

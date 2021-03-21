@@ -68,7 +68,7 @@
     
   </head>
   
-  <body class="ma0 sans-serif bg-primary-color-light{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+  <body class="ma0 font-sans bg-primary-color-light{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
     {{ block "nav" . }}
       {{ partial "site-nav.html" . }}
     {{ end }}
