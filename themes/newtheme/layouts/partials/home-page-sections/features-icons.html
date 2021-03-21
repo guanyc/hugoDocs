@@ -1,6 +1,6 @@
-<div class="w-90-l center">
+<div class="w-90-l mx-auto">
   {{ if .Params.features }}
-    <div class=" flex-ns flex-wrap justify-center center max-w-6xl">
+    <div class=" flex-ns flex-wrap justify-center mx-auto max-w-6xl">
       {{ $features := .Params.features }}
       {{ range $i, $e := $features  }}
         {{ $features_count := $e | len }}
@@ -10,7 +10,7 @@
           <div class="flex-l flex-wrap justify-between">
             <div class="flex-auto w-full w-20-ns pt1 ">
               {{ with .image_path }}
-                <img src="{{ . }}" alt="icon depicting {{ $e.heading }}" class="h-16 o-80 v-mid center w-full">
+                <img src="{{ . }}" alt="icon depicting {{ $e.heading }}" class="h-16 o-80 v-mid mx-auto w-full">
               {{ end }}
             </div>
 
@@ -20,7 +20,7 @@
               </h3>
               <div class="db v-mid w-full gray measure-wide mb5 mb0-l">
                 <p class="f3 primary-color mt0 mb2">{{.tagline}}</p>
-                <div class="lh-copy">
+                <div class="leading-normal">
                   {{ .copy }}
                 </div>
               </div>

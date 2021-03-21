@@ -1,6 +1,6 @@
 {{ $author := .context.Params.author }}
 {{ if $author }}
-  <aside class="mw5 center bg-white rounded-lg pa3 pa4-ns mv3 border border-solid b--black-10 nested-links">
+  <aside class="mw5 mx-auto bg-white rounded-lg pa3 pa4-ns mv3 border border-solid b--black-10 nested-links">
     {{ $urlPre := "https://api.github.com" }}
     {{ $user_json := getJSON $urlPre "/users/" $author }}
 
@@ -22,7 +22,7 @@
       {{ end }}
 
       {{ if $user_json.bio }}
-        <p class="lh-copy measure center f6 black-70">
+        <p class="lh-copy measure mx-auto f6 black-70">
           {{ $user_json.bio }}
         </p>
       {{ end }}

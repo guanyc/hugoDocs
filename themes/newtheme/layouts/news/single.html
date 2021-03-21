@@ -63,8 +63,8 @@
           {{ $name := $name | urlize }}
           {{ $tags := index .Site.Taxonomies.tags $name }}
 
-            <ul class="list dib nested-links ml0 pl0">
-              <li class="dib mb2 mr2">Related:</li>
+            <ul class="list inline-block nested-links ml0 pl0">
+              <li class="inline-block mb2 mr2">Related:</li>
               {{ range $tags.Pages }}
                 {{ if ne .RelPermalink $currentPageUrl }}
                   <li class="mb2 mr3">

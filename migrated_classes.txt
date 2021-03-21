@@ -1,3 +1,7 @@
+appearance-none
+bg-contain
+bg-cover
+block
 border border-solid
 border-0 border-none
 border-2
@@ -29,7 +33,17 @@ h-64
 h-8
 h-full
 h-screen
+hidden
+inline
+inline-block
 inset-0
+leading-none
+leading-normal
+leading-tight
+lg:appearance-none
+lg:bg-contain
+lg:bg-cover
+lg:block
 lg:border border-solid
 lg:border-0 border-none
 lg:border-2
@@ -61,7 +75,14 @@ lg:h-64
 lg:h-8
 lg:h-full
 lg:h-screen
+lg:hidden
+lg:inline
+lg:inline-block
 lg:inset-0
+lg:leading-none
+lg:leading-normal
+lg:leading-tight
+lg:list-reset
 lg:lowercase
 lg:max-w-3lx
 lg:max-w-5xl
@@ -69,6 +90,7 @@ lg:max-w-6xl
 lg:max-w-lg
 lg:max-w-md
 lg:max-w-xs
+lg:mx-auto
 lg:normal-case
 lg:outline-none
 lg:rounded
@@ -97,6 +119,14 @@ lg:w-4
 lg:w-64
 lg:w-8
 lg:w-full
+lg:whitespace-no-wrap
+lg:z-0
+lg:z-10
+lg:z-20
+lg:z-30
+lg:z-40
+lg:z-50
+list-reset
 lowercase
 max-w-3lx
 max-w-5xl
@@ -104,6 +134,7 @@ max-w-6xl
 max-w-lg
 max-w-md
 max-w-xs
+mx-auto
 normal-case
 outline-none
 rounded
@@ -111,6 +142,10 @@ rounded-full
 rounded-lg
 rounded-none
 rounded-sm
+sm:appearance-none
+sm:bg-contain
+sm:bg-cover
+sm:block
 sm:border border-solid
 sm:border-0 border-none
 sm:border-2
@@ -142,7 +177,14 @@ sm:h-64
 sm:h-8
 sm:h-full
 sm:h-screen
+sm:hidden
+sm:inline
+sm:inline-block
 sm:inset-0
+sm:leading-none
+sm:leading-normal
+sm:leading-tight
+sm:list-reset
 sm:lowercase
 sm:max-w-3lx
 sm:max-w-5xl
@@ -150,6 +192,7 @@ sm:max-w-6xl
 sm:max-w-lg
 sm:max-w-md
 sm:max-w-xs
+sm:mx-auto
 sm:normal-case
 sm:outline-none
 sm:rounded
@@ -178,6 +221,13 @@ sm:w-4
 sm:w-64
 sm:w-8
 sm:w-full
+sm:whitespace-no-wrap
+sm:z-0
+sm:z-10
+sm:z-20
+sm:z-30
+sm:z-40
+sm:z-50
 text-2xl
 text-4xl
 text-5xl
@@ -199,3 +249,10 @@ w-4
 w-64
 w-8
 w-full
+whitespace-no-wrap
+z-0
+z-10
+z-20
+z-30
+z-40
+z-50

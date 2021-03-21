@@ -26,14 +26,14 @@
         {{ with $img }}
         {{ $big := .Fill "1024x512 top" }}
         {{ $small := $big.Resize "512x" }}
-        <a href="{{ $.RelPermalink}}" class="tile lazyload cover dib text-xl h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:{{ $small.Width }}px;" 
+        <a href="{{ $.RelPermalink}}" class="tile lazyload cover inline-block text-xl h-64 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:{{ $small.Width }}px;" 
           data-bg="{{ $img.RelPermalink }}"
           data-sizes="auto" 
            data-srcset="{{ $small.RelPermalink }} 1x,
           {{ $big.RelPermalink }} 2x" data-src="small"
         >
           {{with $.Title}}
-          <div class="details absolute bottom-0 f3-ns text-xl left-0 o-0 right-0 top-0">
+          <div class="details absolute bottom-0 sm:text-2xl text-xl left-0 o-0 right-0 top-0">
             <div class="absolute bottom-0 pa2 text-center white">
               {{.}} &#8594;
             </div>

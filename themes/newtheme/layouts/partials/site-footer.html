@@ -1,29 +1,29 @@
 <footer class="bg-primary-color-dark ph4-ns pt4 relative w-full" role="contentinfo">
-    <div class="center flex-ns flex-wrap justify-between max-w-6xl w-90">
+    <div class="mx-auto flex-ns flex-wrap justify-between max-w-6xl w-90">
       <div class="pb3 pt4 w-full w-50-ns">
 
          <div class="font-bold f3  light-gray mb3 nested-links text-center">
            By the <a href="https://github.com/gohugoio/hugo/graphs/contributors" class="link">Hugo Authors</a><br />
           </div>
 
-          <div class="center w-32">
+          <div class="mx-auto w-32">
             <img src="/images/hugo-logo-wide.svg" alt="Hugo Logo">
           </div>
 
-          <ul class="center text-sm list ma0 mv3 pa0 text-center">
-            {{- with .Site.Params.github_repo -}}<li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">File an Issue</a></li>{{- end -}}
-            {{- with .Site.Params.forum -}}<li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">Get Help</a></li>{{- end -}}
-            {{- with .Site.Params.gitter -}}<li class="dib"><a href="{{ . }}" class="dim link light-gray pv2">Discuss Source Code</a></li>{{- end -}}
+          <ul class="mx-auto text-sm list-reset ma0 mv3 pa0 text-center">
+            {{- with .Site.Params.github_repo -}}<li class="inline-block mr3"><a href="{{ . }}" class="dim link light-gray pv2">File an Issue</a></li>{{- end -}}
+            {{- with .Site.Params.forum -}}<li class="inline-block mr3"><a href="{{ . }}" class="dim link light-gray pv2">Get Help</a></li>{{- end -}}
+            {{- with .Site.Params.gitter -}}<li class="inline-block"><a href="{{ . }}" class="dim link light-gray pv2">Discuss Source Code</a></li>{{- end -}}
           </ul>
 
-          <ul class="center text-sm list ma0 mv4 pa0 text-center">
-            <li class="dib mr3"><a href="https://twitter.com/gohugoio" class="dim link light-gray pv2">@GoHugoIO</a></li>
-            <li class="dib mr3"><a href="https://twitter.com/spf13" class="dim link light-gray pv2">@spf13</a></li>
-            <li class="dib"><a href="https://twitter.com/bepsays" class="dim link light-gray pv2">@bepsays</a></li>
+          <ul class="mx-auto text-sm list-reset ma0 mv4 pa0 text-center">
+            <li class="inline-block mr3"><a href="https://twitter.com/gohugoio" class="dim link light-gray pv2">@GoHugoIO</a></li>
+            <li class="inline-block mr3"><a href="https://twitter.com/spf13" class="dim link light-gray pv2">@spf13</a></li>
+            <li class="inline-block"><a href="https://twitter.com/bepsays" class="dim link light-gray pv2">@bepsays</a></li>
           </ul>
 
           {{ with  getenv "REPOSITORY_URL" -}}
-          <p class="center text-sm text-center w-70"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
+          <p class="mx-auto text-sm text-center w-70"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
           {{- end }}
 
       </div>
@@ -35,8 +35,8 @@
     </div>
 
     <div class="text-xs gray mb5 mb0-ns ph3 w-full"> 
-      <p class="dib mr4">The Hugo logos are copyright © Steve Francia 2013–{{ now.Year }}.</p>
-      <p class="dib">The Hugo Gopher is based on an original work by Renée French.</p>
+      <p class="inline-block mr4">The Hugo logos are copyright © Steve Francia 2013–{{ now.Year }}.</p>
+      <p class="inline-block">The Hugo Gopher is based on an original work by Renée French.</p>
     </div>
 
     <img src="/images/gopher-side_color.svg" alt="" class="absolute-l bottom-0 dn db-l h-32 right-0 z-999"/>

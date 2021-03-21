@@ -3,7 +3,7 @@ Showcase: {{ .Title }}
 {{ end }}
 
 {{ define "main" }}
-  <article class="center ph3 ph4-ns pv3 pv5-ns max-w-6xl">
+  <article class="mx-auto ph3 ph4-ns pv3 pv5-ns max-w-6xl">
 
     <!-- header spans the full width -->
     <div class="flex flex-wrap">
@@ -16,7 +16,7 @@ Showcase: {{ .Title }}
         {{template "sc-main-column" .}}
       </div>
 
-      <aside class="dn mid-gray w-full w-20-ns flex-l justify-center order-2">
+      <aside class="hidden mid-gray w-full w-20-ns flex-l justify-center order-2">
         {{template "sc-navigation" .}}
       </aside>
 
@@ -74,7 +74,7 @@ Showcase: {{ .Title }}
         </div>
       {{ end }}
     </div>
-    <div class="b--light-gray border-t border-solid dn-l pt3">
+    <div class="b--light-gray border-t border-solid lg:hidden pt3">
       <div class="text-sm gray mb2">Previous/Next</div>
       {{- partial "previous-next-links-in-section-with-title.html" . -}}
     </div>
@@ -84,7 +84,7 @@ Showcase: {{ .Title }}
 {{define "sc-navigation"}}
   {{$section := where .Site.RegularPages "Section" .Section}}
   {{$number_of_entries := $section | len}}
-  <ul class="pa0 list">
+  <ul class="pa0 list-reset">
   <li class="font-bold f5 blTK b--light-gray pb2 pl2">
       More Sites
   </li>

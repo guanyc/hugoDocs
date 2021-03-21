@@ -4,7 +4,7 @@
     {{ $urlPre := "https://api.github.com" }}
     {{ $user_json := getJSON $urlPre "/users/" $author }}
       {{ if $user_json.name }}
-        <h3 class="f4 dib">
+        <h3 class="f4 inline-block">
             {{ $user_json.name | htmlEscape }}
         </h3>
 
@@ -14,7 +14,7 @@
           {{ $user_json.bio | htmlEscape }}
         </p>
       {{ end }}
-      <a href="{{ $user_json.html_url }}" class="link dim v-mid dib">
+      <a href="{{ $user_json.html_url }}" class="link dim v-mid inline-block">
         {{ partial "svg/github-squared.svg" (dict "fill" "gray" "width" "16" "height" "18") }}
       </a>
   </aside>
