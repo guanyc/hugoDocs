@@ -7,7 +7,7 @@
     {{ end }}
     
     <h1 class="near-black text-2xl">
-      <a href="{{ .context.RelPermalink }}" class="link primary-color dim">
+      <a href="{{ .context.RelPermalink }}" class="link bg-steel-500 dim">
         {{- if eq .context.Section "functions" -}}
           {{ .context.LinkTitle }}
         {{- else -}}
@@ -23,7 +23,7 @@
         {{ .context.Summary  }}
       {{ end }}
       
-      <a href="{{ .context.RelPermalink }}" class="text-sm mt-2 block link primary-color dim">
+      <a href="{{ .context.RelPermalink }}" class="text-sm mt-2 block link bg-steel-500 dim">
         Read More &raquo;
       </a>
     </div>

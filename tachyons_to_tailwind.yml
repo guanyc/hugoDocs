@@ -5,25 +5,32 @@ variants:
 
 # tachyons_class => tailwind_class
 replacements:
+  bg-primary-color-dark: bg-steel-900
+  bg-primary-color: bg-steel-500
+  primary-color-dark: bg-steel-900
+  primary-color: bg-steel-500
   mb2: mb-2
   mb3: mb-3
   mt2: mt-2
-  mb0-ns: "sm:mb-0"
+  mb0: mb-0
   mv0: my-0
   pt4: pt-4
   pt3: pt-3
   pt1: pt-1
-  pt5-ns: "sm:pt-5"
-  pb6-ns: "sm:pb-6"
+  pt5: pt-5
+  pb6: pb-6
+  pt2: pt-2
+  pb3: pb-3
+  pv0: py-0
   pa1: p-1
   pa2: p-2
   pa3: p-3
   pa5: p-5
-  pa4-l: "lg:p-4"
+  pa4: p-4
   ph4: px-4
   pb5: pb-5
-  ph5-ns: "sm:px-5"
-  pv6-ns: "sm:py-6"
+  ph5: px-5
+  pv6: py-6
   pv4: py-4
   bw1: "border-2"
   bw2: "border-4"
@@ -48,6 +55,7 @@ replacements:
   dark-gray: "gray-800"
   black: "black"
   blue: "blue-600"
+  font-thin: font-extralight
   sans-serif: "font-sans"
   serif: "font-serif"
   code: "font-mono"
