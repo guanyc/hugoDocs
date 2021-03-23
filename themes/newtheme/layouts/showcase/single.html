@@ -58,9 +58,9 @@ Showcase: {{ .Title }}
 {{end}}
 
 {{define "sc-details"}}
-  <div class="mt4 mt0-ns nested-links">
+  <div class="mt4 sm:mt-0 nested-links">
     <div class="border border-solid border-gray-300 bg-white p-3">
-      <h1 class="f2-fluid mt0">{{.Title}}</h1>
+      <h1 class="f2-fluid mt-0">{{.Title}}</h1>
       {{ with .Params.siteURL }}
       <a href="{{ . }}" class="block text-base mb1">{{ . | replaceRE "^https?://(www\\.)?([^/]+).*" "$2"}} {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
       {{ end }}

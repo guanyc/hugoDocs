@@ -9,6 +9,7 @@ replacements:
   ph5: px-5
   ph0: py-0
   mb4: mb-4
+  mt0: mt-0
   b--light-gray: border-gray-300
   pt0-l: pt-0
   mid-gray: text-gray-500
