@@ -8,7 +8,7 @@
 
       {{ if $user_json.avatar_url }}
         <a href="{{ $user_json.html_url }}" class="link  hover-bg-light-gray p-1 rounded-full">
-          <img src="{{ $user_json.avatar_url }}&size={{ .size }}" alt="" class="rounded-full border border-solid b--light-gray">
+          <img src="{{ $user_json.avatar_url }}&size={{ .size }}" alt="" class="rounded-full border border-solid border-gray-300">
         </a>
       {{ end }}
 

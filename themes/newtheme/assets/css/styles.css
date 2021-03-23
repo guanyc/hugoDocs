@@ -14,6 +14,12 @@ html {
     }
 }
 
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    fill: currentColor; /* Applies to SVG only */
+}
+
 .nested-blockquote blockquote {
     border-left: 4px solid var(--primary-color);
     padding-left: 1em;
@@ -22,4 +28,13 @@ html {
 
 .mw-90 {
     max-width: 90%;
+}
+
+/* Combine with classes in skins and skins-pseudo for 
+ * many different transition possibilities. */
+.bg-animate,
+.bg-animate:hover,
+.bg-animate:focus {
+    -webkit-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
 }

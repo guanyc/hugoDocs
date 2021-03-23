@@ -1,25 +1,33 @@
-<div class="flex-ns flex-wrap mx-auto max-w-6xl">
-
-  {{ $interior_classes := $.Site.Params.flex_box_interior_classes }}
-
-  <h3 class="text-4xl font-normal text-white">See what others are saying about Hugo…</h3>
-
-  <div class="flex-ns flex-wrap justify-between">
-
-    {{ range first 4 (sort $.Site.Data.homepagetweets.tweet "date" "desc" )  }}
-      <div class="homepage-tweet relative {{ $interior_classes }} rounded-sm mid-gray  pv3 nested-links shadow-5">
-          <div class="absolute top-0 left-0 ma2  o-10">
-            {{ partial "svg/twitter.svg" . }}
-          </div>
-        <blockquote>
-          <p class="text-xl">
-            {{.quote | safeHTML}}
-          </p>
-          <cite class="homepage-tweet-attribution text-gray-600 text-sm">&#9472; {{ .name }} ({{ .twitter_handle }}) <a href="{{ .link }}">
-            {{ dateFormat "January 2, 2006" .date }}</a>
-          </cite>
-        </blockquote>
+<div class="max-w-6xl">
+  <h3 class="text-4xl font-normal text-white">
+    See what others are saying about Hugo…
+  </h3>
+  {{ with (index $.Site.Data.homepagetweets.tweet 0)}}
+    <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+      <div class="px-4 py-5 sm:p-6 font-semibold">
+        {{.quote | safeHTML}}
       </div>
+      <div class="px-4 py-4 sm:px-6">
+        &#9472; {{ .name }} ({{ .twitter_handle }})
+        <a href="{{ .link }}">
+          {{ dateFormat "January 2, 2006" .date }}
+        </a>
+      </div>
+    </div>
+  {{ end }}
+  <div class="flex flex-wrap flex-col mt-8">
+    {{ range first 4 (sort $.Site.Data.homepagetweets.tweet "date" "desc" )  }}
+      <blockquote class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+        <div class="px-4 py-5 sm:p-6">
+          {{.quote | safeHTML}}
+        </div>
+        <cite class="px-4 py-4 sm:px-6">
+          &#9472; {{ .name }} ({{ .twitter_handle }})
+          <a href="{{ .link }}">
+            {{ dateFormat "January 2, 2006" .date }}
+          </a>
+        </cite>
+      </blockquote>
     {{ end }}
   </div>
 </div>

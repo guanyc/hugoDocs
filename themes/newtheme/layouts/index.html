@@ -5,20 +5,20 @@
 
 {{ define "main" }}
   <section class="w-full px-4 sm:px-5 py-4">
-    {{- partial "home-page-sections/features-icons" . -}}
+    {{- partial "home-page-sections/features-icons.html" . -}}
   </section>
   {{ partial "home-page-sections/sponsors.html" (dict "cx" . "gtag" "home" ) }}
 
-  {{- partial "home-page-sections/features-single" . -}}
+  {{- partial "home-page-sections/features-single.html" . -}}
 
   {{- partial "home-page-sections/showcase.html" . -}}
-  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 mid-gray bg-white border-b border-t border-solid b--light-gray">
+  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 text-gray-500 bg-white border-b border-t border-solid border-gray-300">
     {{- partial "home-page-sections/installation" . -}}
   </section>
-  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 mid-gray bg-accent-color-dark">
+  <section class="w-full px-4 sm:px-5 py-4 sm:py-6 text-gray-500 bg-orange-300">
     {{- partial "home-page-sections/tweets" . -}}
   </section>
-  <section class="w-full px-4 sm:px-5 pt-4 pb-5 mid-gray bg-primary-color-light border-b border-t border-solid b--light-gray ">
+  <section class="w-full px-4 sm:px-5 pt-4 pb-5 text-gray-500 bg-steel-100 border-b border-t border-solid border-gray-300 ">
     {{- partial "home-page-sections/open-source-involvement" . -}}
   </section>
 {{ end }}

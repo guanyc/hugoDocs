@@ -61,18 +61,18 @@
     {{- template "_internal/schema.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
     
-    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+    {{ if hugo.IsProduction  }}
       {{ partial "gtag" . }}
     {{ end }}
     
   </head>
   
-  <body class="ma0 font-sans bg-primary-color-light{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+  <body class="m-0 font-sans bg-steel-100{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
     {{ block "nav" . }}
       {{ partial "site-nav.html" . }}
     {{ end }}
     {{ block "header" . }}{{ end }}
-    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    <main role="main" class="content-with-sidebar min-h-screen pb-7 sm:pb-0">
       {{ block "main" . }}{{ end }}
     </main>
     

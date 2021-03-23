@@ -1,7 +1,7 @@
 <header class="flex-none w-full">
   {{ if .Params.categories }}
     {{ range .Params.categories }}
-      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="text-sm font-extrabold mb-0 link mid-gray dim mr3">
+      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="text-sm font-extrabold mb-0 link text-gray-500 dim mr3">
         {{ humanize  . | upper }}
       </a>
     {{ end }}
@@ -15,7 +15,7 @@
   </h1>
 </header>
 
-<aside class="border-t border-solid border-2 pt-3 mt-2 mid-gray b--mid-gray fn w-full">
+<aside class="border-t border-solid border-2 pt-3 mt-2 text-gray-500 b--mid-gray fn w-full">
   {{ with .Params.description }}
     <div class="text-xl font-normal leading-normal">
       {{ . | markdownify }}

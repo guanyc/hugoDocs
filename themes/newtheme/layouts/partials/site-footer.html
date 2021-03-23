@@ -1,6 +1,6 @@
 <footer class="bg-steel-900 sm:px-4 pt-4 relative w-full" role="contentinfo">
-    <div class="mx-auto flex-ns flex-wrap justify-between max-w-6xl w-90">
-      <div class="pb-3 pt-4 w-full w-50-ns">
+    <div class="mx-auto sm:flex flex-wrap justify-between max-w-6xl w-11/12">
+      <div class="pb-3 pt-4 w-full sm:w-1/2">
 
          <div class="font-bold text-2xl  light-gray mb-3 nested-links text-center">
            By the <a href="https://github.com/gohugoio/hugo/graphs/contributors" class="link">Hugo Authors</a><br />
@@ -10,32 +10,32 @@
             <img src="/images/hugo-logo-wide.svg" alt="Hugo Logo">
           </div>
 
-          <ul class="mx-auto text-sm list-reset ma0 mv3 pa0 text-center">
+          <ul class="mx-auto text-sm list-reset m-0 mv3 p-0 text-center">
             {{- with .Site.Params.github_repo -}}<li class="inline-block mr3"><a href="{{ . }}" class="dim link text-gray-200 py-2">File an Issue</a></li>{{- end -}}
             {{- with .Site.Params.forum -}}<li class="inline-block mr3"><a href="{{ . }}" class="dim link text-gray-200 py-2">Get Help</a></li>{{- end -}}
             {{- with .Site.Params.gitter -}}<li class="inline-block"><a href="{{ . }}" class="dim link text-gray-200 py-2">Discuss Source Code</a></li>{{- end -}}
           </ul>
 
-          <ul class="mx-auto text-sm list-reset ma0 mv4 pa0 text-center">
+          <ul class="mx-auto text-sm list-reset m-0 mv4 p-0 text-center">
             <li class="inline-block mr3"><a href="https://twitter.com/gohugoio" class="dim link text-gray-200 py-2">@GoHugoIO</a></li>
             <li class="inline-block mr3"><a href="https://twitter.com/spf13" class="dim link text-gray-200 py-2">@spf13</a></li>
             <li class="inline-block"><a href="https://twitter.com/bepsays" class="dim link text-gray-200 py-2">@bepsays</a></li>
           </ul>
 
           {{ with  getenv "REPOSITORY_URL" -}}
-          <p class="mx-auto text-sm text-center w-70"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
+          <p class="mx-auto text-sm text-center w-8/12"><a href="https://www.netlify.com"><img src="/images/netlify-dark.svg" alt="Netlify badge"></a></p>
           {{- end }}
 
       </div>
 
-      <div class="w-full w-50-l"> 
-        {{ partial "home-page-sections/sponsors.html" (dict "cx" .  "gtag" "footer" "classes_section" "pb-3 w-full" "classes_copy" "text-xs w-90-ns") }}
+      <div class="w-full lg:w-1/2"> 
+        {{ partial "home-page-sections/sponsors.html" (dict "cx" .  "gtag" "footer" "classes_section" "pb-3 w-full" "classes_copy" "text-xs sm:w-11/12") }}
       </div>
 
     </div>
 
     <div class="text-xs text-gray-600 mb5 sm:mb-0 px-3 w-full"> 
-      <p class="inline-block mr4">The Hugo logos are copyright © Steve Francia 2013–{{ now.Year }}.</p>
+      <p class="inline-block mr-4">The Hugo logos are copyright © Steve Francia 2013–{{ now.Year }}.</p>
       <p class="inline-block">The Hugo Gopher is based on an original work by Renée French.</p>
     </div>
 

@@ -1,10 +1,10 @@
 {{ $currentPage := . }}
-<header class="dn-lTK relative clearfix bg-steel-900 pl4 w-full z-50">
+<header class="dn-lTK relative clearfix bg-steel-900 pl-4 w-full z-50">
   <div class="flexTK items-centerTK inline-block ">
     <a class="absolute top-0 left-0 ml4 w-32 sm:w-32 px-3  mr3" href="/">
       <img src="{{ .Site.Params.logo }}" alt="" class="w-full shadow-2">
     </a>
-    <a class="text-xl sm:text-2xl leading-none brand-font font-bold link text-white hover-white no-underline inline-block my-0 ml6 pl3 mr5" href="/">
+    <a class="text-xl sm:text-2xl leading-none brand-font font-bold link text-white hover:text-white no-underline inline-block my-0 ml6 pl-3 mr5" href="/">
      {{ .Site.Title | markdownify  }}
     </a>
   </div>

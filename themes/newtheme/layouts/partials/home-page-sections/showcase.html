@@ -1,9 +1,9 @@
-<section class="bg-near-white mid-gray pb-5 px-4 sm:px-5 pt-4 w-full">
-  <h3 class="text-black text-5xl font-normal leading-tight ma0 pb-3 pt0-l pt-4">Showcase</h3>
+<section class="bg-near-white text-gray-500 pb-5 px-4 sm:px-5 pt-4 w-full">
+  <h3 class="text-black text-5xl font-normal leading-tight m-0 pb-3 pt-0 pt-4">Showcase</h3>
   {{/* NOTE: transitions for this section are in themes/gohugoioTheme/src/css/_carousel.css */}}
   <div class="w-full">
     <div class="w-full overflow-x-scroll">
-      <div class="row whitespace-no-wrap mv2 pb1">
+      <div class="row whitespace-no-wrap mv2 pb-1">
         {{ $showcasePages := where .Site.RegularPages "Section" "showcase" }}
         {{ if $showcasePages }}
         {{ template "home_showcase_item" (index $showcasePages 0) }}
@@ -26,7 +26,7 @@
         {{ with $img }}
         {{ $big := .Fill "1024x512 top" }}
         {{ $small := $big.Resize "512x" }}
-        <a href="{{ $.RelPermalink}}" class="tile lazyload bg-cover inline-block text-xl h-64 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:{{ $small.Width }}px;" 
+        <a href="{{ $.RelPermalink}}" class="tile lazyload bg-cover inline-block text-xl h-64 ml1 mr-4 bg-black relative mw-100 shadow-lg" style="width:{{ $small.Width }}px;" 
           data-bg="{{ $img.RelPermalink }}"
           data-sizes="auto" 
            data-srcset="{{ $small.RelPermalink }} 1x,

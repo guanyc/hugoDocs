@@ -2,7 +2,7 @@
 {{/* this div holds these a tags as a unit for flex-box display */}}
 	<div date-pref>
 		{{if .NextInSection}}
-			<a href="{{.NextInSection.Permalink }}" class="inline-block text-sm pl1 hover-bg-light-gray rounded-full" title="{{ .NextInSection.Title }} ">
+			<a href="{{.NextInSection.Permalink }}" class="inline-block text-sm pl-1 hover-bg-light-gray rounded-full" title="{{ .NextInSection.Title }} ">
 				{{ partial "svg/ic_chevron_left_black_24px.svg" (dict "fill" "#0594CB" "size" "30px") }}
 			</a>
 		{{end}}
