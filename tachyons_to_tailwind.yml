@@ -10,6 +10,10 @@ replacements:
   ph0: py-0
   mb4: mb-4
   mt0: mt-0
+  ma0: m-0
+  pa0: p-0
+  dn: hidden
+  dib: inline-block
   b--light-gray: border-gray-300
   pt0-l: pt-0
   mid-gray: text-gray-500

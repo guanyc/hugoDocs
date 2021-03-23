@@ -1,7 +1,7 @@
 const theme = require('tailwindcss/defaultTheme');
 const typography = require('@tailwindcss/typography');
 
-//const colorBrand = 'var(--color-pretty)';
+const colorPrimaryDark = 'var(--primary-color-dark)';
 
 // Utils
 const round = (num) => num.toFixed(7).replace(/(\.[0-9]+?)0+$/, '$1').replace(/\.0$/, '');
@@ -18,6 +18,7 @@ module.exports = {
 		extend: {
 			// Generated on https://tailwind.ink/ based on the old primary color: #0594CB
 			colors: {
+				primarydark: colorPrimaryDark,
 				steel: {
 					'50': '#f2fafc',
 					'100': '#ddf8fa',
