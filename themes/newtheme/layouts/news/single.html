@@ -3,17 +3,17 @@
 
   <article class="clearfix px-4 pv3 pv5-ns">
       <!-- header spans the full width -->
-    <header class="flex-none w-full pb-3">
+    <header class="flex-none w-full pb3">
       {{ if .Params.categories }}
         {{ range .Params.categories }}
-          <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="text-sm font-extrabold mb-0 link mid-gray dim mr3">
+          <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="text-sm font-extrabold mb0 link mid-gray dim mr3">
             {{ humanize  . | upper }}
           </a>
         {{ end }}
       {{end}}
 
       <h1 class="leading-tight font-black mb7 my-0 pt-3">
-        <a href="{{ .RelPermalink }}" class="link bg-steel-500 dim">
+        <a href="{{ .RelPermalink }}" class="link primary-color dim">
           {{ .Title }}
         </a>
       </h1>
@@ -31,7 +31,7 @@
         </time>
         {{ if in .Params.categories "Releases" }}
         <p>
-        Go to <a href="https://github.com/gohugoio/hugo/releases" class="link bg-steel-500 dim">Hugo Releases</a> for the release downloads.
+        Go to <a href="https://github.com/gohugoio/hugo/releases" class="link primary-color dim">Hugo Releases</a> for the release downloads.
         </p>
         {{ end }}
         <!--

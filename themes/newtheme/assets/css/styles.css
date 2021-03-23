@@ -23,25 +23,3 @@ html {
 .mw-90 {
     max-width: 90%;
 }
-
-/* Classes borrowed from Tachyons.*/
-/*
-  Dim element on hover by adding the dim class.
-
-*/
-.dim {
-    opacity: 1;
-    -webkit-transition: opacity 0.15s ease-in;
-    transition: opacity 0.15s ease-in;
-}
-.dim:hover,
-.dim:focus {
-    opacity: 0.5;
-    -webkit-transition: opacity 0.15s ease-in;
-    transition: opacity 0.15s ease-in;
-}
-.dim:active {
-    opacity: 0.8;
-    -webkit-transition: opacity 0.15s ease-out;
-    transition: opacity 0.15s ease-out;
-}

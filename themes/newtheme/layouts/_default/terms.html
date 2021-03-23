@@ -9,11 +9,11 @@
 
     <div class="w-full w-80-l ph0 lg:px-4">
       <article class="w-full nested-copy-line-height nested-links nested-img">
-        <h1 class="bg-steel-900 text-4xl">
+        <h1 class="primary-color-dark text-4xl">
           {{ .Title }}
         </h1>
       </article>
-      <div class="p-3 sm:p-4 w-full v-top column-count-3-l column-gap-1-l">
+      <div class="p-3 pa4-ns w-full v-top column-count-3-l column-gap-1-l">
           {{ range $key, $value := .Data.Terms }}
             <div class="break-inside-avoid-l nested-copy-line-height mb5">
               <h2 class="text-2xl">

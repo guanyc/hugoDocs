@@ -3,7 +3,7 @@
 <ul class="list-reset hidden inline-block ph0 ma0 scrolling-touch text-center">
   {{ range $menu }}
     <li  class="text-left inline-block ma0 hover-bg-black w-full">
-        <a href="{{.URL}}" class="uppercase text-sm link primary-color-light overflow hover-white block brand-font  ma0 w-full pv3 px-4{{if $currentPage.IsMenuCurrent "main" . }} bg-steel-500{{end}}">
+        <a href="{{.URL}}" class="uppercase text-sm link primary-color-light overflow hover-white block brand-font  ma0 w-full pv3 px-4{{if $currentPage.IsMenuCurrent "main" . }} bg-primary-color{{end}}">
           {{ .Name }}
         </a>
     </li>
