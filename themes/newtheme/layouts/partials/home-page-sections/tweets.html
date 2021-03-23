@@ -1,33 +1,29 @@
-<div class="max-w-6xl">
+<div class="max-w-6xl mx-auto">
   <h3 class="text-4xl font-normal text-white">
-    See what others are saying about Hugo…
+    {{ "What others are saying about Hugo" | title }}
   </h3>
-  {{ with (index $.Site.Data.homepagetweets.tweet 0)}}
-    <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-      <div class="px-4 py-5 sm:p-6 font-semibold">
-        {{.quote | safeHTML}}
-      </div>
-      <div class="px-4 py-4 sm:px-6">
-        &#9472; {{ .name }} ({{ .twitter_handle }})
-        <a href="{{ .link }}">
-          {{ dateFormat "January 2, 2006" .date }}
-        </a>
-      </div>
-    </div>
-  {{ end }}
-  <div class="flex flex-wrap flex-col mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {{ range first 4 (sort $.Site.Data.homepagetweets.tweet "date" "desc" )  }}
-      <blockquote class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-        <div class="px-4 py-5 sm:p-6">
-          {{.quote | safeHTML}}
+      <blockquote class="mt-6 md:flex-grow md:flex md:flex-col bg-white rounded-md shadow-md p-8">
+        <div class="relative text-base leading-snug tracking-tight font-medium md:flex-grow">
+          <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <p class="relative ml-6 mt-1">
+            {{.quote | safeHTML}}
+          </p>
         </div>
-        <cite class="px-4 py-4 sm:px-6">
-          &#9472; {{ .name }} ({{ .twitter_handle }})
-          <a href="{{ .link }}">
-            {{ dateFormat "January 2, 2006" .date }}
-          </a>
-        </cite>
+        <footer class="mt-1 ml-6">
+          <div class="flex items-start font-bold">
+            <div class="ml-4 text-royalblue-500 hover:text-royalblue-700">
+              <a href="{{ .link }}">
+                {{ .name | default .twitter_handle }}
+              </a>
+            </div>
+          </div>
+        </footer>
       </blockquote>
     {{ end }}
   </div>
+  
 </div>

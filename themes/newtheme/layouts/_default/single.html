@@ -1,15 +1,12 @@
 {{ define "main" }}
   <article class="w-full px-4 pb-5 sm:pb-6 pt-1 sm:pt-5">
     <div class="lg:flex">
-
-      <div class="order-2 w-full lg:w-1/5 ph5-m ph0-l mb4 sticky">
-      {{- partial "toc.html" . -}}
+      <div class="order-2 w-full lg:w-1/5 md:px-5 lg:py-0 mb-4 fixed right-0">
+        {{- partial "toc.html" . -}}
       </div>
-
-      <div class="order-1 lg:w-3/5 max-w-3lx ph0 sm:px-5 text-gray-500 leading-normal no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+      <div class="order-1 lg:w-3/5 max-w-3lx py-0 sm:px-5 text-gray-500 leading-normal no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
         <div class="documentation-copy mx-auto lg:max-w-lg">
-          <div id="readout" class="fixed right-0 bottom-0">
-          </div>
+          <div id="readout" class="fixed right-0 bottom-0"></div>
           {{ .Render "page" }}
           {{ partial "related.html" . }}
         </div>
@@ -17,10 +14,8 @@
       <div class="order-0 w-1/5 hidden lg:block">
         {{ partial "nav-links-docs.html" . }}
       </div>
-
     </div>
   </article>
-
   <div class="w-full bg-light-gray">
     <div class="max-w-3lx p-4 mx-auto nested-lh-copy leading-normal">
       {{ partial "docs/page-meta-data.html" . }}

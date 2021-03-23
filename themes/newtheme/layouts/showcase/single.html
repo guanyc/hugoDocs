@@ -65,7 +65,7 @@ Showcase: {{ .Title }}
       <a href="{{ . }}" class="block text-base mb1">{{ . | replaceRE "^https?://(www\\.)?([^/]+).*" "$2"}} {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
       {{ end }}
       {{ with .Params.siteSource }}
-      <a href="{{ . }}" class="block mb4">source {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
+      <a href="{{ . }}" class="block mb-4">source {{ partial "svg/link-ext.svg" (dict "size" "10") }}</a>
       {{ end }}
       {{ $bio := (.Resources.ByType "page").GetMatch "bio*" }}
       {{ with $bio }}
