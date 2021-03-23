@@ -32,6 +32,8 @@ replacements:
   ph5: px-5
   pv6: py-6
   pv4: py-4
+  ph3: px-3
+  pv2: py-2
   bw1: "border-2"
   bw2: "border-4"
   ba: "border border-solid"
@@ -46,15 +48,18 @@ replacements:
   br3: "rounded-lg"
   br-pill: "rounded-full"
   br-100: "rounded-full"
-  white: "white"
-  near-white: "gray-100"
-  light-gray: "gray-200"
-  moon-gray: "gray-400"
-  silver: "gray-500"
-  gray: "gray-600"
+  white: "text-white"
+  gray-100: text-gray-100
+  gray-200: text-gray-200
+  gray-400: text-gray-400
+  gray-500: text-gray-500
+  gray-600: text-gray-600
   dark-gray: "gray-800"
-  black: "black"
-  blue: "blue-600"
+  gray-800: text-gray-800
+  black: "text-black"
+  blue-600: text-royalblue-600
+  bg-blue: bg-royalblue-600
+  white: text-white
   font-thin: font-extralight
   sans-serif: "font-sans"
   serif: "font-serif"

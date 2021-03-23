@@ -1,10 +1,10 @@
 {{ $currentPage := . }}
-<nav class="bg-primary-color-dark py-4 w-full" role="navigation">
+<nav class="bg-steel-900 py-4 w-full" role="navigation">
 
   <div class="mx-auto flex-ns flex-wrap items-center justify-start max-w-6xl">
 
     <h1 class="dim text-2xl leading-none ml0-ns mr0 mr4-l my-0 pl3 pl4-ns">
-      <a href="https://gohugo.io/" class="link white">
+      <a href="https://gohugo.io/" class="link text-white">
          HUGO
       </a>
     </h1>
@@ -12,7 +12,7 @@
       {{ range .Site.Menus.global }}
         <li class="text-base inline-block mr4" role="menuitem">
             {{/* TODO: Create an "Global" active class to show which site one is currently at */}}
-          <a href="{{ .URL }}" class="dim link{{ if $currentPage.IsMenuCurrent "global" . }} gray-600 {{else}} light-silver{{ end }}">
+          <a href="{{ .URL }}" class="dim link{{ if $currentPage.IsMenuCurrent "global" . }} text-gray-600 {{else}} light-silver{{ end }}">
             {{ .Name }}
               {{/* using ".Post" from the menu system to determine if we should show an icon for external links */}}
             {{ $post_status := printf "%s" .Post }}

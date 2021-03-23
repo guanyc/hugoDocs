@@ -1,5 +1,5 @@
 <div class="relative {{ .classes }} weight-{{ .context.Weight }}">
-  <div class="bg-white mb-2 p-3 lg:p-4 gray-600">
+  <div class="bg-white mb-2 p-3 lg:p-4 text-gray-600">
     {{ if eq .context.Section "news" }}
       <date class="text-sm block" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         {{ .context.Date.Format "January 2, 2006" }}
@@ -7,7 +7,7 @@
     {{ end }}
     
     <h1 class="near-black text-2xl">
-      <a href="{{ .context.RelPermalink }}" class="link primary-color dim">
+      <a href="{{ .context.RelPermalink }}" class="link text-steel-500 dim">
         {{- if eq .context.Section "functions" -}}
           {{ .context.LinkTitle }}
         {{- else -}}
@@ -23,7 +23,7 @@
         {{ .context.Summary  }}
       {{ end }}
       
-      <a href="{{ .context.RelPermalink }}" class="text-sm mt-2 block link primary-color dim">
+      <a href="{{ .context.RelPermalink }}" class="text-sm mt-2 block link text-steel-500 dim">
         Read More &raquo;
       </a>
     </div>

@@ -1,19 +1,19 @@
-<table class="collapse border border-solid rounded b--black-10 pv2 ph3">
+<table class="collapse border border-solid rounded b--black-10 py-2 px-3">
 	<thead>
 		<tr>
-			<th class="pv2 ph3 text-left text-sm font-semibold uppercase">LastMod</th>
-			<th class="pv2 ph3 text-left text-sm font-semibold uppercase">Link</th>
-			<th class="pv2 ph3 text-left text-sm font-semibold uppercase">GitHub</th>
+			<th class="py-2 px-3 text-left text-sm font-semibold uppercase">LastMod</th>
+			<th class="py-2 px-3 text-left text-sm font-semibold uppercase">Link</th>
+			<th class="py-2 px-3 text-left text-sm font-semibold uppercase">GitHub</th>
 		</tr>
 	</thead>
 	<tbody>
 		{{ range  . }}
 		<tr class="striped--light-gray">
-			<td class="pv2 ph3">{{ .Lastmod.Format "2006-01-02" }}</td>
-			<td class="pv2 ph3">
+			<td class="py-2 px-3">{{ .Lastmod.Format "2006-01-02" }}</td>
+			<td class="py-2 px-3">
 				<a href="{{ .Permalink }}">{{ .Title }}</a>
 			</td>
-			<td class="pv2 ph3">
+			<td class="py-2 px-3">
 				<a href="{{.Site.Params.ghrepo}}blob/master/content/{{.Lang }}/{{.Path}}">
 					{{ with .GitInfo }}{{ .Subject }}{{ else }}Source{{ end }}
 				</a>

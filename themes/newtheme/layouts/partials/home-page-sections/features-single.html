@@ -13,12 +13,12 @@
 
         <div class="w-full w-50-l">
           <div class="w-80-ns mx-auto text-center">
-            <h3 class="text-5xl font-normal black ma0 pt-4 leading-tight pt0-l">{{ .heading }}</h3>
+            <h3 class="text-5xl font-normal text-black ma0 pt-4 leading-tight pt0-l">{{ .heading }}</h3>
             <p class="text-2xl leading-normal">
               {{ .copy }}
             </p>
               <p class="text-xl leading-normal nested-linksTK">
-                <a href="{{ .link | absURL }}" class="link black dim">
+                <a href="{{ .link | absURL }}" class="link text-black dim">
                   {{ .cta }} {{ partial "svg/link-ext.svg" (dict "fill" "#333" "size" "14") }}
                 </a>
               </p>

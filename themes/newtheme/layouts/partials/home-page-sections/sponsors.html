@@ -1,9 +1,9 @@
-{{$classes_box := "border border-solid b--dark-gray bg-light-gray rounded-lg flex flex-column flex-wrap items-center justify-center ph3 py-4 mb4 w-full w-30-l "}}
+{{$classes_box := "border border-solid b--dark-gray bg-light-gray rounded-lg flex flex-column flex-wrap items-center justify-center px-3 py-4 mb4 w-full w-30-l "}}
 {{$gtag := .gtag | default "unknown" }}
 {{ with .cx.Site.Data.sponsors }}
-  <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray border-b border-solid border-t border-solid ph5 py-4 w-full"}}">
+  <section class="{{ $.classes_section | default "bg-steel-900 b--dark-gray border-b border-solid border-t border-solid px-5 py-4 w-full"}}">
     <div class="mx-auto max-w-6xl"> 
-      <h3 class="font-bold text-2xl my-0 gray-200">Hugo Sponsors</h3>
+      <h3 class="font-bold text-2xl my-0 text-gray-200">Hugo Sponsors</h3>
       <div class="flex-ns flex-wrap mx-auto justify-between pt-3">
         {{ range .banners }}
           {{ $banner := . }}
@@ -21,14 +21,14 @@
               <img src="{{ .logo }}" alt="Logo for {{ .name }}" class="img h-16 mx-auto" />
               {{with .link}}</a>{{end}}
               {{with .copy}}
-                <p class="mx-auto leading-normal gray-600 mv1 text-center {{$.classes_copy | default "text-base w-70-ns"}}">
+                <p class="mx-auto leading-normal text-gray-600 mv1 text-center {{$.classes_copy | default "text-base w-70-ns"}}">
                   {{- . -}}
                 </p>
               {{end}}
             </div>
           {{else}}
             <div class="{{$classes_box}} o-10">
-              <p class="font-bold black text-center">Your Logo Here</p>
+              <p class="font-bold text-black text-center">Your Logo Here</p>
             </div>
           {{end}}
         {{end}}

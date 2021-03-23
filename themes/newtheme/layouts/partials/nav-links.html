@@ -1,5 +1,5 @@
 {{ $currentPage := . }}
-{{ $.Scratch.Add "listlinkClasses" "text-sm link primary-color-dark  hover-white block brand-font  ma0 w-full pv3 px-4" }}
+{{ $.Scratch.Add "listlinkClasses" "text-sm link text-steel-900  hover-white block brand-font  ma0 w-full pv3 px-4" }}
 
 <!-- TODO: Not getting ismenucurrent -->
 
@@ -27,7 +27,7 @@
           {{ end }}
         </ul>
       {{ else }}
-        <a href="{{.URL}}" class="uppercase {{ $.Scratch.Get "listlinkClasses" }}{{if $currentPage.IsMenuCurrent "main" . }} bg-primary-color{{end}}">
+        <a href="{{.URL}}" class="uppercase {{ $.Scratch.Get "listlinkClasses" }}{{if $currentPage.IsMenuCurrent "main" . }} bg-steel-500{{end}}">
           {{ .Name }}
         </a>
       {{end}}

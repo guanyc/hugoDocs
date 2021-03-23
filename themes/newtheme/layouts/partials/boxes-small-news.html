@@ -1,13 +1,13 @@
-<section class="relative w-full bg-black white">
+<section class="relative w-full bg-black text-white">
   <div class="flex flex-wrap w-90-l mx-auto mx-auto max-w-6xl">
-    <!-- <a href="/news/" class="link accent-color sm:text-right text-sm w-full w-50-m w-10-l bg-animate hover-bg-accent-color hover-white pv3 lg:py-4 ph3 lg:px-4 inline-block">
+    <!-- <a href="/news/" class="link accent-color sm:text-right text-sm w-full w-50-m w-10-l bg-animate hover-bg-accent-color hover-white pv3 lg:py-4 px-3 lg:px-4 inline-block">
       Latest News:
     </a> -->
     {{ range first 4 ( sort (where .Site.RegularPages "Section" "news") "Date" "desc" ) }}
       <!-- only show 2 boxes on mobile -->
       {{ $.Scratch.Add "i" 1 }}{{ $i := $.Scratch.Get "i" }}
-      <a href="{{ .RelPermalink }}" class="link leading-normal gray-200 text-sm w-full w-50-m w-25-l bg-animate hover-bg-accent-color hover-white pv3 sm:py-4 ph3 sm:px-4{{ if ge $i 3 }} hidden lg:inline-block{{ else }} inline-block{{ end }}">
-        <span class="text-sm gray-600 pb1 block">
+      <a href="{{ .RelPermalink }}" class="link leading-normal text-gray-200 text-sm w-full w-50-m w-25-l bg-animate hover-bg-accent-color hover-white pv3 sm:py-4 px-3 sm:px-4{{ if ge $i 3 }} hidden lg:inline-block{{ else }} inline-block{{ end }}">
+        <span class="text-sm text-gray-600 pb1 block">
           {{ .Date.Format "January 2, 2006" }}
         </span>
         {{ .Params.description | markdownify | truncate 100 "…"}}

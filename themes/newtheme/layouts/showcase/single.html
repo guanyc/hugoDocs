@@ -3,7 +3,7 @@ Showcase: {{ .Title }}
 {{ end }}
 
 {{ define "main" }}
-  <article class="mx-auto ph3 sm:px-4 pv3 pv5-ns max-w-6xl">
+  <article class="mx-auto px-3 sm:px-4 pv3 pv5-ns max-w-6xl">
 
     <!-- header spans the full width -->
     <div class="flex flex-wrap">
@@ -22,7 +22,7 @@ Showcase: {{ .Title }}
 
     </div>
 
-    <div class="text-sm gray-600 mv6">{{/* bottom row */}}
+    <div class="text-sm text-gray-600 mv6">{{/* bottom row */}}
       Last Update: {{ .Lastmod.Format "January 2, 2006" }} <br>
       {{ partial "page-edit.html" . }}
     </div>
@@ -75,7 +75,7 @@ Showcase: {{ .Title }}
       {{ end }}
     </div>
     <div class="b--light-gray border-t border-solid lg:hidden pt-3">
-      <div class="text-sm gray-600 mb-2">Previous/Next</div>
+      <div class="text-sm text-gray-600 mb-2">Previous/Next</div>
       {{- partial "previous-next-links-in-section-with-title.html" . -}}
     </div>
   </div>
@@ -97,7 +97,7 @@ Showcase: {{ .Title }}
     {{end}}
     {{if gt $number_of_entries 20}}
       <li class="mt3">
-        <a href="/showcase/page/2/" class="link blue-600">
+        <a href="/showcase/page/2/" class="link text-royalblue-600">
           See More &raquo;
         </a>
       </li>

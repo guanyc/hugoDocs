@@ -1,6 +1,6 @@
-<h6 class="text-xl gray-800 mb-2">
-  <a href="{{ .Permalink }}" class="hide-child link primary-color">
+<h6 class="text-xl text-gray-800 mb-2">
+  <a href="{{ .Permalink }}" class="hide-child link text-steel-500">
   <span class="nl3 child">{{ partial "svg/link-permalink.svg" (dict "size" "14px") }}</span>
     “{{ .Title }}”
-  </a> was last updated: {{ .Lastmod.Format "January 2, 2006" }}{{ with .GitInfo }}: <a class="hide-child link primary-color" href="{{$.Site.Params.ghrepo}}commit/{{ .Hash }}">{{ .Subject }} ({{ .AbbreviatedHash }})</a>{{end }}
+  </a> was last updated: {{ .Lastmod.Format "January 2, 2006" }}{{ with .GitInfo }}: <a class="hide-child link text-steel-500" href="{{$.Site.Params.ghrepo}}commit/{{ .Hash }}">{{ .Subject }} ({{ .AbbreviatedHash }})</a>{{end }}
 </h6>

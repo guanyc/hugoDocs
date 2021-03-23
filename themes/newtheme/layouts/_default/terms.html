@@ -9,21 +9,21 @@
 
     <div class="w-full w-80-l ph0 lg:px-4">
       <article class="w-full nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark text-4xl">
+        <h1 class="text-steel-900 text-4xl">
           {{ .Title }}
         </h1>
       </article>
-      <div class="p-3 pa4-ns w-full v-top column-count-3-l column-gap-1-l">
+      <div class="p-3 sm:p-4 w-full v-top column-count-3-l column-gap-1-l">
           {{ range $key, $value := .Data.Terms }}
             <div class="break-inside-avoid-l nested-copy-line-height mb5">
               <h2 class="text-2xl">
-                <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link black hover-blue">
-                  {{ $key }} <span class="text-sm gray-600"> &#8599;</span>
+                <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link text-black hover-blue">
+                  {{ $key }} <span class="text-sm text-gray-600"> &#8599;</span>
                 </a>
               </h2>
               {{ range $value.Pages }}
                 <h3>
-                  <a href="{{ .Permalink }}" class="link blue-600">
+                  <a href="{{ .Permalink }}" class="link text-royalblue-600">
                     {{ .Title }}
                   </a>
                 </h3>
