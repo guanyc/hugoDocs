@@ -2,23 +2,27 @@
 # Chinese menus
 
 [[docs]]
-  name = "关于 Hugo"
+  name = "关于"
   weight = 1
   identifier = "about"
   url = "/zh/about/"
 
+
+
 [[docs]]
-  name = "入门"
+  name = "快速入门"
   weight = 5
   identifier = "getting-started"
   url = "/zh/getting-started/"
 
-[[docs]]
-  name = "主题"
-  weight = 15
-  identifier = "themes"
-  post = "break"
-  url = "/zh/themes/"
+
+
+  [[docs]]
+    name = "模块"
+    weight = 15
+    identifier = "modules"
+    post = "break"
+    url = "/zh/hugo-modules/"
 
 # Core languages.zh.menus
 
@@ -46,6 +50,12 @@
   weight = 35
   identifier = "variables"
   url = "/zh/variables/"
+
+  [[docs]]
+    name = "Hugo 管道"
+    weight = 36
+    identifier = "pipes"
+    url = "/zh/hugo-pipes/"
 
 [[docs]]
   name = "CLI"
@@ -79,6 +89,16 @@
   post = "break"
   identifier = "contribute"
   url = "/zh/contribute/"
+
+  ######## QUICKLINKS
+
+    [[quicklinks]]
+      name = "Fundamentals"
+      weight = 1
+      identifier = "fundamentals"
+      url = "/tags/fundamentals/"
+
+      ######## GLOBAL ITEMS TO BE SHARED WITH THE HUGO SITES
 
 [[global]]
   name = "新闻"

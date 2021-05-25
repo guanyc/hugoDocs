@@ -1,10 +1,10 @@
 ---
-title: Base 模板 and Blocks
-linktitle:
-description: The base and block constructs allow you to define the outer shell of your master templates (i.e., the chrome of the page).
+title: 基础模板和区块
+linktitle: 基础模板
+description: 基础模板和区块构造允许您定义主模板的外壳(页面的镶嵌结构).
 godocref: https://golang.org/pkg/text/template/#example_Template_block
 date: 2017-02-01
-publishdate: 2018-08-11
+publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates,fundamentals]
 keywords: [blocks,base]
@@ -19,47 +19,19 @@ aliases: [/templates/blocks/,/templates/base-templates-and-blocks/]
 toc: true
 ---
 
-The `block` keyword allows you to define the outer shell of your pages' one or more master template(s) and then fill in or override portions as necessary.
+`区块`关键词允许您定义页面的一个或者多个主模板的外壳,然后在需要时填入或者重载.
 
 {{< youtube QVOMCYitLEc >}}
 
-## Base Template Lookup Order
+## 基础模板查询顺序
 
-The [lookup order][lookup] for base templates is as follows:
+{{< new-in "0.63.0" >}} 从Hugo版本V0.63开始, 基础模板的查询顺序紧随其适用的模板. (比如 `_default/list.html`).
 
-1. `/layouts/section/<TYPE>-baseof.html`
-2. `/themes/<THEME>/layouts/section/<TYPE>-baseof.html`
-3. `/layouts/<TYPE>/baseof.html`
-4. `/themes/<THEME>/layouts/<TYPE>/baseof.html`
-5. `/layouts/section/baseof.html`
-6. `/themes/<THEME>/layouts/section/baseof.html`
-7. `/layouts/_default/<TYPE>-baseof.html`
-8. `/themes/<THEME>/layouts/_default/<TYPE>-baseof.html`
-9. `/layouts/_default/baseof.html`
-10. `/themes/<THEME>/layouts/_default/baseof.html`
+参考 [模板查询顺序](/templates/lookup-order/) 获得更多细节和例子的信息.
 
-Variables are denoted by capitalized text set within `<>`. Note that Hugo's default behavior is for `type` to inherit from `section` unless otherwise specified.
+## 定义基础模板
 
-### Example Base Template Lookup Order
-
-As an example, let's assume your site is using a theme called "mytheme" when rendering the section list for a `posts` section. Hugo picks `layout/section/posts.html` as the template for [rendering the section][]. The `{{define}}` block in this template tells Hugo that the template is an extension of a base template.
-
-Here is the lookup order for the `posts` base template:
-
-1. `/layouts/section/posts-baseof.html`
-2. `/themes/mytheme/layouts/section/posts-baseof.html`
-3. `/layouts/posts/baseof.html`
-4. `/themes/mytheme/layouts/posts/baseof.html`
-5. `/layouts/section/baseof.html`
-6. `/themes/mytheme/layouts/section/baseof.html`
-7. `/layouts/_default/posts-baseof.html`
-8. `/themes/mytheme/layouts/_default/posts-baseof.html`
-9. `/layouts/_default/baseof.html`
-10. `/themes/mytheme/layouts/_default/baseof.html`
-
-## Define the Base Template
-
-The following defines a simple base template at `_default/baseof.html`. As a default template, it is the shell from which all your pages will be rendered unless you specify another `*baseof.html` closer to the beginning of the lookup order.
+下面例子定义了一个简单的基础模版`_default/baseof.html`. 作为一个缺省模板, 它是所有页面呈现的外壳，除非重新指明了接近模板查询顺序开始的另一个`*baseof.html`.
 
 {{< code file="layouts/_default/baseof.html" download="baseof.html" >}}
 <!DOCTYPE html>
@@ -67,25 +39,27 @@ The following defines a simple base template at `_default/baseof.html`. As a def
   <head>
     <meta charset="utf-8">
     <title>{{ block "title" . }}
-      <!-- Blocks may include default content. -->
+      <!-- 区块可以包含缺省内容  -->
       {{ .Site.Title }}
     {{ end }}</title>
   </head>
   <body>
-    <!-- Code that all your templates share, like a header -->
+    <!-- 所有模板都分享的代码, 比如一个头部部分 -->
+
     {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
+      <!-- 不同模板开始不同的页面的部分  -->
     {{ end }}
+
     {{ block "footer" . }}
-    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+    <!-- 更多共享代码， 可能是页脚，但是也可以被重载如果有需要-->
     {{ end }}
   </body>
 </html>
 {{< /code >}}
 
-## Override the Base Template
+## 重载基础模板
 
-From the above base template, you can define a [default list template][hugolists]. The default list template will inherit all of the code defined above and can then implement its own `"main"` block from:
+基于上面的基础模板, 可以定义[默认的list模板][hugolists]. 默认的list模板从基础模板中继承所有定义在 `"main"` 之前的代码, 然后实现自己的`"main"` 区块:
 
 {{< code file="layouts/_default/list.html" download="list.html" >}}
 {{ define "main" }}
@@ -99,25 +73,25 @@ From the above base template, you can define a [default list template][hugolists
 {{ end }}
 {{< /code >}}
 
-This replaces the contents of our (basically empty) "main" block with something useful for the list template. In this case, we didn't define a `"title"` block, so the contents from our base template remain unchanged in lists.
+这样将我们的 "main"(基本为空白)区块内容替换为对list模板有意义的内容。这里, 我们并没有定义`"title"` 区块, 所以从基础模板中的内容在lists中仍然不变.
 
 {{% warning %}}
-Code that you put outside the block definitions *can* break your layout. This even includes HTML comments. For example:
+在区块定义外面的代码 *能够* 破坏布局. 即使是HTML注释，也是如此:
 
 ```
-<!-- Seemingly harmless HTML comment..that will break your layout at build -->
+<!-- 看起来有害的HTML注释..可能会在构建时破坏布局 -->
 {{ define "main" }}
 ...your code here
 {{ end }}
 ```
-[See this thread from the Hugo discussion forums.](https://discourse.gohugo.io/t/baseof-html-block-templates-and-list-types-results-in-empty-pages/5612/6)
+[更多信息请见 Hugo 论坛讨论.](https://discourse.gohugo.io/t/baseof-html-block-templates-and-list-types-results-in-empty-pages/5612/6)
 {{% /warning %}}
 
-The following shows how you can override both the `"main"` and `"title"` block areas from the base template with code unique to your [default single page template][singletemplate]:
+下面[默认的单页模板][singletemplate]例子中显示如何重载基础模板中的 `"main"` 和 `"title"`区块, 并且应用了针对[默认的单页模板][singletemplate]特别的代码:
 
 {{< code file="layouts/_default/single.html" download="single.html" >}}
 {{ define "title" }}
-  <!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example-->
+  <!-- 这里覆盖了 baseof.html 中的默认值 "{{.Site.Title}}"-在一开始的例子中的 -->
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}

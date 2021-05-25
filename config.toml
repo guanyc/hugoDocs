@@ -71,3 +71,13 @@ resampleFilter = "CatmullRom"
 quality = 75
 
 anchor = "smart"
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 10
+  [languages.zh]
+    contentDir = "content/zh"
+    languageName = "中文简体"
+    weight = 20

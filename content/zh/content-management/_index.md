@@ -1,10 +1,10 @@
 ---
 title: 内容管理
 linktitle: 内容管理概览
-description: Hugo 可以管理大型的静态网站，支持骨架、内容类型、菜单、引用、概要等等。
-date: 2018-04-23
-publishdate: 2018-04-23
-lastmod: 2018-04-23
+description: 使用Hugo易于管理大型静态网站, 对于原型、内容类型、菜单、交互引用、摘要等支持良好
+date: 2017-02-01
+publishdate: 2017-02-01
+lastmod: 2017-02-01
 menu:
   docs:
     parent: "content-management"
@@ -15,7 +15,7 @@ weight: 01	#rem
 draft: false
 aliases: [/content/,/content/organization]
 toc: false
-isCJKLanguage: true
 ---
 
-一个实用的静态网站生成器，需要超越“文件头” (front matter) 和模板的等基本功能，才能兼备可伸缩性和可管理性，满足用户所需。Hugo 不仅是给开发者设计的，也同样适用于内容管理员和写作人员。
+静态网站生成工具需要从仅仅是前端内容和一些模板中出来，要具有扩展性和*可管理性*.
+Hugo的设计开发不仅着眼于开发者，同时也想着为内容管理者和内容作者带来很好的体验。

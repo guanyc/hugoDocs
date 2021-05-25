@@ -1,10 +1,10 @@
 ---
-title: 关于 Hugo
-linktitle: 概览
-description: Hugo 的特色、规划、许可和动力。
-date: 2018-04-26
-publishdate: 2018-04-26
-lastmod: 2018-04-26
+title: About Hugo
+linktitle: Overview
+description: Hugo's features, roadmap, license, and motivation.
+date: 2017-02-01
+publishdate: 2017-02-01
+lastmod: 2017-02-01
 categories: []
 keywords: []
 menu:
@@ -17,4 +17,4 @@ aliases: [/about-hugo/,/docs/]
 toc: false
 ---
 
-Hugo 不是一般的静态网站生成器。
+Hugo is not your average static site generator.
