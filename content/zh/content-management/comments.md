@@ -34,13 +34,13 @@ Disqus评论功能需要您设置一个唯一参数在[站点配置文件][confi
 disqusShortname = "yourdiscussshortname"
 {{</ code-toggle >}}
 
-对许多站点来说, 这样就已经足够。不过，您拥有在单一内容文件的前端设置中设置更多选项的选择:
+对许多站点来说, 这样就已经足够。不过，您拥有在单一内容文件的前言设定中设置更多选项的选择:
 
 * `disqus_identifier`
 * `disqus_title`
 * `disqus_url`
 
-### 显示Hugo的内建Disqus部分模版
+### 显示Hugo的内建Disqus部分模板
 
 Disqus has its own [internal template](https://gohugo.io/templates/internal/#disqus) available, to render it add the following code where you want comments to appear:
 

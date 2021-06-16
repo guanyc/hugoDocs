@@ -163,7 +163,7 @@ enableRobotsTXT (false)
 
 frontmatter
 
-: 参考 [前端设置配置](#configure-front-matter).
+: 参考 [前言设定配置](#configure-front-matter).
 
 footnoteAnchorPrefix ("")
 : 脚注锚的前缀

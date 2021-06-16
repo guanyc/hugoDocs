@@ -56,7 +56,7 @@ _预定义变量_ 可以是在当前范围内(如后面部分[Variables]({{< rel
 
 #### 方法和字段通过点表示法访问
 
-访问页面内容前端设定[front matter][]中定义的页面参数`bar`:
+访问页面内容前言设定[front matter][]中定义的页面参数`bar`:
 
 ```go-html-template
 {{ .Params.bar }}
@@ -280,7 +280,7 @@ It skips the block if the variable is absent, or if it evaluates to
 
 #### 例子2: `with` .. `else`
 
-下面的代码片段中，如果内容的前端设定设置了 "description"，就使用 "description"的值，
+下面的代码片段中，如果内容的前言设定设置了 "description"，就使用 "description"的值，
 否则使用默认的 `.Summary` [页面变量][pagevars]:
 
 
@@ -412,13 +412,13 @@ Go文档中text/template部分的[例子中](https://golang.org/pkg/text/templat
 
 The most easily overlooked concept to understand about Go Templates is
 that `{{ . }}` always refers to the **current context**.
-理解Go模版中最容易被简单忽视的概念是,`{{ . }}` 总是指向 **当前上下文current context**.
+理解Go模板中最容易被简单忽视的概念是,`{{ . }}` 总是指向 **当前上下文current context**.
 
 - 在最顶层的模板中, 这指的是它可以获取的数据集合.
 - 在循环迭代中, 它具有循环中当前item的值。 `{{ . }}` 当前不在指向完整页面所有的数据集合.
 
 
-如果需要在循环内部访问页面级别的数据(比如，在前端设定的页面参数)，
+如果需要在循环内部访问页面级别的数据(比如，在前言设定的页面参数)，
 可以通过如下方式的一种来实现:
 
 ### 1. 定义一个上下文独立的变量
@@ -445,7 +445,7 @@ Notice how once we have entered the loop (i.e. `range`), the value of `{{ . }}` 
 
 ### 2. 使用 `$.` 访问全局上下文
 
-`$`在模版中具有特殊的重要性. 缺省情况下`.` ("the dot")的最初的值被赋予`$`. 这是一个[Go语言文本/模板的有文档的特性][dotdoc]。这意味着您可以在任何地点访问全局上下文. 下面例子重写了前面的代码块，不过现在是从全局上下文获取`.Site.Title`:
+`$`在模板中具有特殊的重要性. 缺省情况下`.` ("the dot")的最初的值被赋予`$`. 这是一个[Go语言文本/模板的有文档的特性][dotdoc]。这意味着您可以在任何地点访问全局上下文. 下面例子重写了前面的代码块，不过现在是从全局上下文获取`.Site.Title`:
 
 {{< code file="range-through-tags-w-global.html" >}}
 <ul>
@@ -468,7 +468,7 @@ Notice how once we have entered the loop (i.e. `range`), the value of `{{ . }}` 
 Go语言1.6包含了从Go tag标签的任何一边删除空白的能力,
 只需要在对应的`{{` 或者 `}}` 分隔符旁边包含一个连字符号 (`-`) 和跟随的空格.
 
-下面列子中，Go模版会包含换行符和水平tag键在HTML输出中:
+下面列子中，Go模板会包含换行符和水平tag键在HTML输出中:
 
 ```go-html-template
 <div>
@@ -563,7 +563,7 @@ You can provide variables to be used by templates in individual content's [front
 
 An example of this is used in the Hugo docs. Most of the pages benefit from having the table of contents provided, but sometimes the table of contents doesn't make a lot of sense. We've defined a `notoc` variable in our front matter that will prevent a table of contents from rendering when specifically set to `true`.
 Hugo Doc中使用了这样的例子。大部分Hugo Doc页面从提供的目录中获益，但是有时候文档目录并没有太大用。
-我们在前端设置中定义了 `notoc` 变量, 当这个值特别设置为`true`时，会阻止内容目录的生成。
+我们在前言设定中定义了 `notoc` 变量, 当这个值特别设置为`true`时，会阻止内容目录的生成。
 
 使用front matter(YAML)的例子:
 
@@ -592,7 +592,7 @@ notoc: true
 {{ end }}
 {{< /code >}}
 
-对于没有明确声明的页面的默认行为是包含TOC. 模板检查确认页面前端设置的`notoc:`值没有被设置为`true`.
+对于没有明确声明的页面的默认行为是包含TOC. 模板检查确认页面前言设定的`notoc:`值没有被设置为`true`.
 
 ## 使用站点配置参数
 
@@ -651,7 +651,7 @@ An alternative way of writing the "`if`" and then referencing the same value is 
 
 Go allows you to do more than what's shown here. Using Hugo's [`where` function][where] and Go built-ins, we can list only the items from `content/events/` whose date (set in a content file's [front matter][]) is in the future. The following is an example [partial template][partials]:
 
-Go可以让您做的比这里说的更多。使用Hugo的[`where`函数][where]和Go语言的内建函数, 我们可以从内容块 `content/events/` 中仅仅列出日期(在内容文件的[前端设定][front matter]中设定)在未来的条目。
+Go可以让您做的比这里说的更多。使用Hugo的[`where`函数][where]和Go语言的内建函数, 我们可以从内容块 `content/events/` 中仅仅列出日期(在内容文件的[前言设定][front matter]中设定)在未来的条目。
 下面例子是一个[部分模板partial template][partials]的例子:
 
 {{< code file="layouts/partials/upcoming-events.html" download="upcoming-events.html" >}}

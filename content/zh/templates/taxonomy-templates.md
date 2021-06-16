@@ -1,7 +1,7 @@
 ---
 title: 标签分类模板
 linktitle: 标签模板
-description: 标签分类模板包括标签list, 标签条目list页,以及在单一页面模版中使用分类信息.
+description: 标签分类模板包括标签list, 标签条目list页,以及在单一页面模板中使用分类信息.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -24,24 +24,24 @@ https://discourse.gohugo.io/t/how-to-specify-category-slug/4856/15 for original 
 Hugo includes support for user-defined groupings of content called **taxonomies**. Taxonomies are classifications that demonstrate logical relationships between content. See [Taxonomies under Content Management](/content-management/taxonomies) if you are unfamiliar with how Hugo leverages this powerful feature.
 Hugo支持用户定义的内容分组，也就是**taxonomies 标签分类**。 标签是展示内容逻辑联系的分类. 参考[内容管理中标签](/content-management/taxonomies), 如果您不熟悉Hugo使用这个强大特性的方式。
 
-Hugo提供了在项目模版中使用标签的多种方式::
+Hugo提供了在项目模板中使用标签的多种方式::
 
 * 对展示在[taxonomy list template](#taxonomy-list-template)中的一个标签条目相关的内容的排序
 * 对展示在[taxonomy terms template](#taxonomy-terms-template)中的条目排序方式的支持
-* 在单一页面模版[single page template][]中对单一页面内容的标签条目列表展示
+* 在单一页面模板[single page template][]中对单一页面内容的标签条目列表展示
 
-## 标签列表模版 Taxonomy List Templates
+## 标签列表模板 Taxonomy List Templates
 
 Taxonomy list page templates are lists and therefore have all the variables and methods available to [list pages][lists].
-标签列表模版是list页面，因此可以具有[list pages][lists]的所有变量,可以访问[list pages][lists]的所有方法.
+标签列表模板是list页面，因此可以具有[list pages][lists]的所有变量,可以访问[list pages][lists]的所有方法.
 
-### 标签列表模版查询顺序 Taxonomy List Template Lookup Order
+### 标签列表模板查询顺序 Taxonomy List Template Lookup Order
 
 参考[Template Lookup](/templates/lookup-order/).
 
-## 标签条目模版
+## 标签条目模板
 
-### 标签条目模版查询顺序 Taxonomy Terms Templates Lookup Order
+### 标签条目模板查询顺序 Taxonomy Terms Templates Lookup Order
 
 参考 [Template Lookup](/templates/lookup-order/).
 
@@ -113,7 +113,7 @@ type WeightedPages []WeightedPage
 
 If you need to display custom metadata for each taxonomy term, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in its front matter, [as explained in the taxonomies documentation](/content-management/taxonomies/#add-custom-meta-data-to-a-taxonomy-term). Based on the Actors taxonomy example shown there, within your taxonomy terms template, you may access your custom fields by iterating through the variable `.Pages` as such:
 
-如果希望对每个标签条目展示定制的元数据, 您需要为此条目创建页面`/content/<TAXONOMY>/<TERM>/_index.md` 并在前端设置中添加您的元数据, [如同标签文档中说明的一样](/content-management/taxonomies/#add-custom-meta-data-to-a-taxonomy-term)， 类似那里的演员标签例子中显示的那样，在标签条目模版的内部，您可以遍历页面变量 `.Pages` 访问定制的字段:
+如果希望对每个标签条目展示定制的元数据, 您需要为此条目创建页面`/content/<TAXONOMY>/<TERM>/_index.md` 并在前言设定中添加您的元数据, [如同标签文档中说明的一样](/content-management/taxonomies/#add-custom-meta-data-to-a-taxonomy-term)， 类似那里的演员标签例子中显示的那样，在标签条目模板的内部，您可以遍历页面变量 `.Pages` 访问定制的字段:
 
 
 ```go-html-template
@@ -201,14 +201,14 @@ There are two different templates that the use of taxonomies will require you to
 使用标签分类您需要提供两种不同的模板
 
 Both templates are covered in detail in the templates section.
-两种模版在模版部分都有详尽的描述
+两种模板在模板部分都有详尽的描述
 
 A [list template](/templates/list/) is any template that will be used to render multiple pieces of content in a single html page. This template will be used to generate all the automatically created taxonomy pages.
-[列表模版](/templates/list/)是指用来在单一html页面中展示多个内容的任何模版.这个模板被用来生成全部的自动生成的标签页面。
+[列表模板](/templates/list/)是指用来在单一html页面中展示多个内容的任何模板.这个模板被用来生成全部的自动生成的标签页面。
 
 A [taxonomy terms template](/templates/terms/) is a template used to
 generate the list of terms for a given template.
-[标签条目模版](/templates/terms/)是用来生成标签条目list的任何模版.
+[标签条目模板](/templates/terms/)是用来生成标签条目list的任何模板.
 
 <!-- Begin /taxonomies/displaying/ -->
 
@@ -225,12 +225,12 @@ using the [list templates](/templates/list/):
 ## 展示页面的内容标签 Display a Single Piece of Content's Taxonomies
 
 Within your content templates, you may wish to display the taxonomies that piece of content is assigned to.
-在内容模版中，您可能希望展示内容被赋予的标签条目
+在内容模板中，您可能希望展示内容被赋予的标签条目
 
 Because we are leveraging the front matter system to define taxonomies for content, the taxonomies assigned to each content piece are located in the usual place (i.e., `.Params.<TAXONOMYPLURAL>`).
 由于我们使用前言设定来定义内容的标签, 赋予每个内容的标签位于通常位置 (比如, `.Params.<TAXONOMYPLURAL>`)
 
-### 例子: 在单页模版内列出标签
+### 例子: 在单页模板内列出标签
 
 ```go-html-template
 <ul>
@@ -242,12 +242,12 @@ Because we are leveraging the front matter system to define taxonomies for conte
 
 If you want to list taxonomies inline, you will have to take care of optional plural endings in the title (if multiple taxonomies), as well as commas. Let's say we have a taxonomy "directors" such as `directors: [ "Joel Coen", "Ethan Coen" ]` in the TOML-format front matter.
 为列出内联的标签， 需要注意可选的标题的复数结尾(多个标签里)，以及逗号。 假设页面有标签 "directors"，在toml格式的
-前端设置里面有 `directors: [ "Joel Coen", "Ethan Coen" ]`
+前言设定里面有 `directors: [ "Joel Coen", "Ethan Coen" ]`
 
 
 展示标签，使用下面例子:
 
-### 例子: 单页模版中逗号分隔的标签
+### 例子: 单页模板中逗号分隔的标签
 
 ```go-html-template
 {{ $taxo := "directors" }} <!-- Use the plural form here -->

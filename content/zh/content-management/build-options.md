@@ -16,7 +16,7 @@ aliases: [/content/build-options/]
 toc: true
 ---
 
-构建选项都存储在保留的名为`_build_`的前端设置对象中，具有如下默认值:
+构建选项都存储在保留的名为`_build_`的前言设定对象中，具有如下默认值:
 
 ```yaml
 _build:

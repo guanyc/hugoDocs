@@ -27,7 +27,7 @@ for more information).
 如果用户需要在更深层定义n内容块,比如`foo`, 那么需要创建一个名为`foo`的目录并创建一个`_index.md`文件(参考 [Branch Bundles][branch bundles]获得更多信息)
 
 {{% note %}}
-**内容块**不能被前端设定参数定义或者重载--内容块严格从内容组织结构派生出来.
+**内容块**不能被前言设定参数定义或者重载--内容块严格从内容组织结构派生出来.
 {{% /note %}}
 
 ## 嵌套块
@@ -55,7 +55,7 @@ currently always the *root section* only (`/blog/funny-cats/mypost/ => blog`).
 当讨论和模板选择有关的 **块**时, 当前总是指的 *根块* (`/blog/funny-cats/mypost/ => blog`).
 
 If you need a specific template for a sub-section, you need to adjust either the `type` or `layout` in front matter.
-如果需要为子块选择特定模板，需要调整内容的前端设置中的`type` 或者 `layout`.
+如果需要为子块选择特定模板，需要调整内容的前言设定中的`type` 或者 `layout`.
 {{% /note %}}
 
 ## 例子: 面包屑导航
@@ -97,7 +97,7 @@ Hugo自动为每一个*根块*创建页面，页面上列出了本块包含的�
 
 By default, everything created within a section will use the [content `type`][content type] that matches the *root section* name. For example, Hugo will assume that `posts/post-1.md` has a `posts` content `type`. If you are using an [archetype][] for your `posts` section, Hugo will generate front matter according to what it finds in `archetypes/posts.md`.
 
-缺省情况下, 在内容块内创建的任何内容都使用和  *root section 根块* 名称匹配的 [内容 `类型`][content type]. 比如hugo会假设`posts/post-1.md`具有`posts` 内容 `type`. 如果对于`posts`块使用了[archetype][]，Hugo会从`archetypes/posts.md`原型中穿件内容的前端设置.
+缺省情况下, 在内容块内创建的任何内容都使用和  *root section 根块* 名称匹配的 [内容 `类型`][content type]. 比如hugo会假设`posts/post-1.md`具有`posts` 内容 `type`. 如果对于`posts`块使用了[archetype][]，Hugo会从`archetypes/posts.md`原型中穿件内容的前言设定.
 
 [archetype]: /content-management/archetypes/
 [content type]: /content-management/types/

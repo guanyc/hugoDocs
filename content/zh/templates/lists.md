@@ -39,7 +39,7 @@ Hugo对传统上是列表内容的任何输出的HTML页面应用list模板:
 * [RSS][rss]
 
 For template lookup order, see [Template Lookup](/templates/lookup-order/).
-模版查询顺序, 请参考[Template Lookup](/templates/lookup-order/)
+模板查询顺序, 请参考[Template Lookup](/templates/lookup-order/)
 
 The idea of a list page comes from the [hierarchical mental model of the web][mentalmodel] and is best demonstrated visually:
 页面列表list的想法来源于[网络的分级心智模型 hierarchical mental model of the web][mentalmodel]
@@ -51,7 +51,7 @@ The idea of a list page comes from the [hierarchical mental model of the web][me
 
 ### 默认的模板 Default Templates
 
-区块的list和特定标签的list考虑它们的模板都是*lists*， 在它们模板查询顺序中都具有确定的默认模板 `_default/list.html` 或者 `themes/<THEME>/layouts/_default/list.html`. 另外,[section lists][sectiontemps] 和 [taxonomy lists][taxlists] 具有它们默认的在目录`_default`中的list模版.
+区块的list和特定标签的list考虑它们的模板都是*lists*， 在它们模板查询顺序中都具有确定的默认模板 `_default/list.html` 或者 `themes/<THEME>/layouts/_default/list.html`. 另外,[section lists][sectiontemps] 和 [taxonomy lists][taxlists] 具有它们默认的在目录`_default`中的list模板.
 
 
 参考 [Template Lookup Order](/templates/lookup-order/) 获得完整信息
@@ -65,7 +65,7 @@ Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages an
 
 {{% note %}}
 It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
-重要提示, 请注意所有 `_index.md` 内容文件会根据一个*list*模板显示，而不会根据[单页模版](/templates/single-page-templates/)显示
+重要提示, 请注意所有 `_index.md` 内容文件会根据一个*list*模板显示，而不会根据[单页模板](/templates/single-page-templates/)显示
 {{% /note %}}
 
 ### 项目目录举例
@@ -126,7 +126,7 @@ You can now access this `_index.md`'s' content in your list template:
 {{ end }}
 {{< /code >}}
 
-上面模版会输出如下的HTML:
+上面模板会输出如下的HTML:
 
 {{< code file="example.com/posts/index.html" copy="false" >}}
 <!--top of your baseof code-->
@@ -149,7 +149,7 @@ You can now access this `_index.md`'s' content in your list template:
 ### 不需要`_index.md`的List页面
 
 You do *not* have to create an `_index.md` file for every list page (i.e. section, taxonomy, taxonomy terms, etc) or the homepage. If Hugo does not find an `_index.md` within the respective content section when rendering a list template, the page will be created but with no `{{.Content}}` and only the default values for `.Title` etc.
-不需要为每一个list页面(如section, taxonomy标签页, taxonomy terms标签条目等页面)或者首页创建 `_index.md`文件。如果Hugo在显示list模版时在相应的内容section内没有找到 `_index.md`, hugo会创建list页面, 但是不包含`{{.Content}}`，仅仅包含 `.Title`的默认值.
+不需要为每一个list页面(如section, taxonomy标签页, taxonomy terms标签条目等页面)或者首页创建 `_index.md`文件。如果Hugo在显示list模板时在相应的内容section内没有找到 `_index.md`, hugo会创建list页面, 但是不包含`{{.Content}}`，仅仅包含 `.Title`的默认值.
 
 Using this same `layouts/_default/list.html` template and applying it to the `quotes` section above will render the following output. Note that `quotes` does not have an `_index.md` file to pull from:
 使用上面相同的 `layouts/_default/list.html` 模板, 对上面的 `quotes` 区块应用这个模板会产生下面的输出. 请注意 `quotes` 并没有一个可以提取内容的`_index.md`:
@@ -181,7 +181,7 @@ Hugo的默认行为是将list的title复数化, 因此`quote`区块名称在`.Ti
 
 ### 块模板
 
-list模版已经被修改，同[spf13.com](http://spf13.com/)原来使用的模板稍微不同。 为了所生成页面的拼接，它使用了[partial templates][partials]，而没有使用 [base template][base]. 下面的例子也使用了[内容视图模板][views] `li.html` 或者 `summary.html`
+list模板已经被修改，同[spf13.com](http://spf13.com/)原来使用的模板稍微不同。 为了所生成页面的拼接，它使用了[partial templates][partials]，而没有使用 [base template][base]. 下面的例子也使用了[内容视图模板][views] `li.html` 或者 `summary.html`
 
 {{< code file="layouts/section/posts.html" >}}
 {{ partial "header.html" . }}
@@ -220,7 +220,7 @@ list模版已经被修改，同[spf13.com](http://spf13.com/)原来使用的模�
 ## 对内容排序
 
 Hugo lists render the content based on metadata you provide in [front matter][]. In addition to sane defaults, Hugo also ships with multiple methods to make quick work of ordering content inside list templates:
-Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生成内容. 除了缺省显示, hugo也提供了多个方法在list模板内对内容进行快速排序。
+Hugo列表list基于内容的前言设定 [front matter][]中的元数据来生成内容. 除了缺省显示, hugo也提供了多个方法在list模板内对内容进行快速排序。
 
 ### 缺省的排序顺序: Weight > Date > LinkTitle > FilePath
 
@@ -255,7 +255,7 @@ Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生�
 
 {{< code file="layouts/partials/by-date.html" >}}
 <ul>
-    <!-- 基于前端设定中的“date”值对内容排序 -->
+    <!-- 基于前言设定中的“date”值对内容排序 -->
     {{ range .Pages.ByDate }}
         <li>
             <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
@@ -269,7 +269,7 @@ Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生�
 
 {{< code file="layouts/partials/by-publish-date.html" >}}
 <ul>
-    <!-- 基于前端设定中的“publishdate”值对内容排序-->
+    <!-- 基于前言设定中的“publishdate”值对内容排序-->
     {{ range .Pages.ByPublishDate }}
         <li>
             <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
@@ -296,7 +296,7 @@ Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生�
 
 {{< code file="layouts/partials/by-last-mod.html" >}}
 <ul>
-    <!-- 基于前端设定中的“lastmod”值对内容排序-->
+    <!-- 基于前言设定中的“lastmod”值对内容排序-->
     {{ range .Pages.ByLastmod }}
         <li>
             <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
@@ -324,7 +324,7 @@ Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生�
 
 {{< code file="layouts/partials/by-title.html" >}}
 <ul>
-    <!-- 按前端设定中"title"的升序排列-->
+    <!-- 按前言设定中"title"的升序排列-->
     {{ range .Pages.ByTitle }}
         <li>
             <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
@@ -338,7 +338,7 @@ Hugo列表list基于内容的前端设置 [front matter][]中的元数据来生�
 
 {{< code file="layouts/partials/by-link-title.html" >}}
 <ul>
-    <!-- 按前端设定中"linktitle"的升序排列.如果未设定"LinkTitle",使用"title"作为"linktitle" -->
+    <!-- 按前言设定中"linktitle"的升序排列.如果未设定"LinkTitle",使用"title"作为"linktitle" -->
     {{ range .Pages.ByLinkTitle }}
         <li>
             <h1><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h1>
@@ -432,7 +432,7 @@ In the above example, you may want `{{.Title}}` to point the `title` field you h
 ### 按日期分组 By Date
 
 {{< code file="layouts/partials/by-page-date.html" >}}
-<!-- 基于前端设置的"date"中的月份将内容分组 -->
+<!-- 基于前言设定的"date"中的月份将内容分组 -->
 {{ range .Pages.GroupByDate "2006-01" }}
 <h3>{{ .Key }}</h3>
 <ul>
@@ -449,7 +449,7 @@ In the above example, you may want `{{.Title}}` to point the `title` field you h
 ### 按发布日期分组 By Publish Date
 
 {{< code file="layouts/partials/by-page-publish-date.html" >}}
-<!-- 基于前端设置的"publishDate"中的月份将内容分组 -->
+<!-- 基于前言设定的"publishDate"中的月份将内容分组 -->
 {{ range .Pages.GroupByPublishDate "2006-01" }}
 <h3>{{ .Key }}</h3>
 <ul>
@@ -467,7 +467,7 @@ In the above example, you may want `{{.Title}}` to point the `title` field you h
 ### 按最后修改时间分组 By Lastmod
 
 {{< code file="layouts/partials/by-page-lastmod.html" >}}
-<!-- 基于前端设置的"lastMod"中的月份将内容分组  -->
+<!-- 基于前言设定的"lastMod"中的月份将内容分组  -->
 {{ range .Pages.GroupByLastmod "2006-01" }}
 <h3>{{ .Key }}</h3>
 <ul>
@@ -569,7 +569,7 @@ Because Grouping returns a `{{.Key}}` and a slice of pages, all of the ordering 
 
 下面例子中的排序:
 
-1. 内容按照前端设置中`date`的月份分组
+1. 内容按照前言设定中`date`的月份分组
 2. 不同组按照升序排列(最早的组先出来)
 3. 相应的每个组内页面通过`title`按字母顺序排序
 

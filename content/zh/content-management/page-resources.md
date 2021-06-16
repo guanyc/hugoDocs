@@ -33,11 +33,11 @@ the lowest page they are bundled with, and simple which names does not contain `
 ？在Hugo `0.80.0`版本中，我们修正了一个错误，非图片类型(比如视频)返回MIME自类型，比如`json`?.
 
 资源名称 Name
-: 默认值是文件名(相对于拥有页面), 可以在前端设置中设置。
+: 默认值是文件名(相对于拥有页面), 可以在前言设定中设置。
 
 
 Title
-: 默认值和`.Name`一样也是是文件名(相对于拥有页面), 可以在前端设置中设置。
+: 默认值和`.Name`一样也是是文件名(相对于拥有页面), 可以在前言设定中设置。
 
 
 绝对URL Permalink
@@ -98,12 +98,12 @@ GetMatch
 ## 页面资源 元数据 Page Resources Metadata
 
 The page resources' metadata is managed from the corresponding page's front matter with an array/table parameter named `resources`. You can batch assign values using [wildcards](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm).
-页面资源的元数据通过在页面的前端设定中的名为`resouces`的数组或表格参数来管理。
+页面资源的元数据通过在页面的前言设定中的名为`resouces`的数组或表格参数来管理。
 可以使用[匹配符号wildcards](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm)来批处理设置值。
 
 {{% note %}}
 Resources of type `page` get `Title` etc. from their own front matter.
-具有`page`类型的资源从它们自己的前端设置获得`Title`等元数据
+具有`page`类型的资源从它们自己的前言设定获得`Title`等元数据
 {{% /note %}}
 
 name

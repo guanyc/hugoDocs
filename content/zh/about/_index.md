@@ -1,7 +1,7 @@
 ---
-title: About Hugo
-linktitle: Overview
-description: Hugo's features, roadmap, license, and motivation.
+title: Hugo简介
+linktitle: 总览
+description: Hugo的特性、路线图、授权、动力
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01

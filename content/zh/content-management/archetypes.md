@@ -21,7 +21,7 @@ toc: true
 
 **Archetypes** are content template files in the [archetypes directory][] of your project that contain preconfigured [front matter][] and possibly also a content disposition for your website's [content types][]. These will be used when you run `hugo new`.
 
-**原型** 是项目的[原型目录][archetypes directory]内的内容模板文件, 这些模板包含预定义的[前端设置][front matter], 同时也可能是您站点[内容类型][content types]的内容配置目录。在使用 `hugo new`命令创建新内容时会使用原型.
+**原型** 是项目的[原型目录][archetypes directory]内的内容模板文件, 这些模板包含预定义的[前言设定][front matter], 同时也可能是您站点[内容类型][content types]的内容配置目录。在使用 `hugo new`命令创建新内容时会使用原型.
 
 
 `hugo new` 命令使用`content-section`来寻找项目中最合适的原型模板。如果项目中不包含任何原型文件，命令也会查找theme主题目录中原型文件。

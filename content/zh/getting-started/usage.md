@@ -194,7 +194,7 @@ in 90 ms
 
 ## 草案、未来和过期内容 Draft, Future, and Expired Content
 
-Hugo允许您在网站内容的[前端设定][front matter]中设置文档的 `draft`, `publishdate` 甚至 `expirydate` 字段。默认情况下，Hugo不会发布下面内容:
+Hugo允许您在网站内容的[前言设定][front matter]中设置文档的 `draft`, `publishdate` 甚至 `expirydate` 字段。默认情况下，Hugo不会发布下面内容:
 
 1. `publishdate` 发布日期值设定在未来的内容
 2. `draft: true` 草案状态设置为真的内容

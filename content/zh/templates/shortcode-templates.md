@@ -19,8 +19,8 @@ toc: true
 ---
 
 Shortcodes are a means to consolidate templating into small, reusable snippets that you can embed directly inside of your content. In this sense, you can think of shortcodes as the intermediary between [page and list templates][templates] and [basic content files][].
-Shortcodes短代码是加强模版功能的简短的、可重用的代码片段, 您可以在内容内直接嵌入短代码。
-某种意义上，可以认为短代理是[页面和list模版][templates] and [基础内容文件][basic content files]中的中间件.
+Shortcodes短代码是加强模板功能的简短的、可重用的代码片段, 您可以在内容内直接嵌入短代码。
+某种意义上，可以认为短代理是[页面和list模板][templates] and [基础内容文件][basic content files]中的中间件.
 
 {{% note %}}
 Hugo also ships with built-in shortcodes for common use cases. (See [Content Management: Shortcodes](/content-management/shortcodes/).)
@@ -37,7 +37,7 @@ Hugo的内建短代码覆盖了很多常见-但不是全部-的用例. 幸运的
 ### 文件位置 File Location
 
 To create a shortcode, place an HTML template in the `layouts/shortcodes` directory of your [source organization][]. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}` depending on the type of parameters you choose.
-为创建短代码模版, 在[代码组织][source organization]的 `layouts/shortcodes`目录创建新的HTML模版.
+为创建短代码模板, 在[代码组织][source organization]的 `layouts/shortcodes`目录创建新的HTML模板.
 请仔细考虑文件名称，短代码名会反应文件名称, 但是不包括 `.html` 扩展名. 比如,  `layouts/shortcodes/myshortcode.html` 的代码会以`{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}`的方式被调用, 依赖于所选择参数类型。
 
 
@@ -51,9 +51,9 @@ You can organize your shortcodes in subfolders, e.g. in `layouts/shortcodes/boxe
 Note the forward slash.
 注意反斜线
 
-### 短代码模版解析查询顺序 Shortcode Template Lookup Order
+### 短代码模板解析查询顺序 Shortcode Template Lookup Order
 
-短代码模版的解析查询顺序简单些,仅仅查询如下两个地方:
+短代码模板的解析查询顺序简单些,仅仅查询如下两个地方:
 
 1. `/layouts/shortcodes/<SHORTCODE>.html`
 2. `/themes/<THEME>/layouts/shortcodes/<SHORTCODE>.html`
@@ -141,7 +141,7 @@ The `.Params` variable in shortcodes contains the list parameters passed to shor
 
 `$.Page.Params`
 : refers to the page's params; the "page" in this case refers to the content file in which the shortcode is declared (e.g., a `shortcode_color` field in a content's front matter could be accessed via `$.Page.Params.shortcode_color`).
-页面参数的引用; 这里的 "page" 引用的是短代码声明所在的内容文件(比如, 页面内容前端设置中 `shortcode_color` 字段可以通过 `$.Page.Params.shortcode_color` 访问)
+页面参数的引用; 这里的 "page" 引用的是短代码声明所在的内容文件(比如, 页面内容前言设定中 `shortcode_color` 字段可以通过 `$.Page.Params.shortcode_color` 访问)
 
 `$.Page.Site.Params`
 : refers to global variables as defined in your [site's configuration file][config].
@@ -161,7 +161,7 @@ For example, you could create an `image` shortcode that can take either a `src` 
 ```
 
 You could then include the following as part of your shortcode templating:
-然后您可以包含下面代码作为短代码模版的一部分:
+然后您可以包含下面代码作为短代码模板的一部分:
 
 ```
 {{ if .IsNamedParams }}
@@ -176,7 +176,7 @@ See the [example Vimeo shortcode][vimeoexample] below for `.IsNamedParams` in ac
 
 {{% warning %}}
 While you can create shortcode templates that accept both positional and named parameters, you *cannot* declare shortcodes in content with a mix of parameter types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
-虽然可以创建短代码模版接受位置参数和命名参数, 但是*无法*在混合参数类型的上下文中声明短代码。 因此，短代码声明类似`{{</* image src="images/my-image.jpg" "This is my alt text" */>}}`的声明，会返回错误.
+虽然可以创建短代码模板接受位置参数和命名参数, 但是*无法*在混合参数类型的上下文中声明短代码。 因此，短代码声明类似`{{</* image src="images/my-image.jpg" "This is my alt text" */>}}`的声明，会返回错误.
 {{% /warning %}}
 
 You can also use the variable `.Page` to access all the normal [page variables][pagevars].
@@ -188,7 +188,7 @@ A shortcodes can also be nested. In a nested shortcode, you can access the paren
 ### 检查短代码是否存在  Checking for Existence
 
 You can check if a specific shortcode is used on a page by calling `.HasShortcode` in that page template, providing the name of the shortcode. This is sometimes useful when you want to include specific scripts or styles in the header that are only used by that shortcode.
-可以在页面模版中使用 `.HasShortcode` 参数来检查特定短代码是否在页面内使用。这个特性有时候有些帮助，比如想包含仅仅会被短代码使用的特定脚本或者样式表。
+可以在页面模板中使用 `.HasShortcode` 参数来检查特定短代码是否在页面内使用。这个特性有时候有些帮助，比如想包含仅仅会被短代码使用的特定脚本或者样式表。
 
 ## 定制的短代码例子 Custom Shortcode Examples
 
@@ -218,7 +218,7 @@ Embedded videos are a common addition to markdown content that can quickly becom
 ```
 
 Would load the template at `/layouts/shortcodes/youtube.html`:
-会调用`/layouts/shortcodes/youtube.html`的模版:
+会调用`/layouts/shortcodes/youtube.html`的模板:
 
 {{< code file="/layouts/shortcodes/youtube.html" >}}
 <div class="embed video-player">
@@ -247,7 +247,7 @@ Let's say you want to create your own `img` shortcode rather than use Hugo's bui
 {{< /code >}}
 
 You have created the shortcode at `/layouts/shortcodes/img.html`, which loads the following shortcode template:
-创建了短代码文件`/layouts/shortcodes/img.html`,调用下面模版:
+创建了短代码文件`/layouts/shortcodes/img.html`,调用下面模板:
 
 {{< code file="/layouts/shortcodes/img.html" >}}
 <!-- image -->
@@ -289,7 +289,7 @@ Would be rendered as:
 {{</* vimeo id="49718712" class="flex-video" */>}}
 ```
 
-会调用 `/layouts/shortcodes/vimeo.html`的模版:
+会调用 `/layouts/shortcodes/vimeo.html`的模板:
 
 {{< code file="/layouts/shortcodes/vimeo.html" >}}
 {{ if .IsNamedParams }}
@@ -398,7 +398,7 @@ This will output the following HTML. Note how the first two `img` shortcodes inh
 ## 短代码中错误处理 Error Handling in Shortcodes
 
 Use the [errorf](/functions/errorf) template func and [.Position](/variables/shortcodes/) variable to get useful error messages in shortcodes:
-使用[errorf](/functions/errorf)模版函数和[.Position](/variables/shortcodes/)变量来获得有用的短代码错误信息:
+使用[errorf](/functions/errorf)模板函数和[.Position](/variables/shortcodes/)变量来获得有用的短代码错误信息:
 
 ```bash
 {{ with .Get "name" }}
@@ -434,7 +434,7 @@ enableInlineShortcodes = true
 {{< /code-toggle >}}
 
 It is disabled by default for security reasons. The security model used by Hugo's template handling assumes that template authors are trusted, but that the content files are not, so the templates are injection-safe from malformed input data. But in most situations you have full control over the content, too, and then `enableInlineShortcodes = true` would be considered safe. But it's something to be aware of: It allows ad-hoc [Go Text templates](https://golang.org/pkg/text/template/) to be executed from the content files.
-由于安全原因,这个特性默认是禁用的。Hugo的模版处理所用的安全模型假设模版作者是可信任的、到那时内容文件不是，所以模版对于异常的输入信息是插入安全的。但是在很多情景下您也具有对内容的完全控制，这样打开`enableInlineShortcodes = true`参数开关被认为是安全的。不过这还是需要的事项: 这允许特许的[Go Text templates](https://golang.org/pkg/text/template/) 在内容文件内执行。
+由于安全原因,这个特性默认是禁用的。Hugo的模板处理所用的安全模型假设模板作者是可信任的、到那时内容文件不是，所以模板对于异常的输入信息是插入安全的。但是在很多情景下您也具有对内容的完全控制，这样打开`enableInlineShortcodes = true`参数开关被认为是安全的。不过这还是需要的事项: 这允许特许的[Go Text templates](https://golang.org/pkg/text/template/) 在内容文件内执行。
 
 
 And once enabled, you can do this in your content files:
@@ -448,13 +448,13 @@ The above will print the current date and time.
 上面例子会打印当前日期和是时间.
 
 Note that an inline shortcode's inner content is parsed and executed as a Go text template with the same context as a regular shortcode template.
-请注意内联的短代码内容是作为Go语言Text模版解析和执行的，具有和常规短代码模版相同的上下文。
+请注意内联的短代码内容是作为Go语言Text模板解析和执行的，具有和常规短代码模板相同的上下文。
 
 This means that the current page can be accessed via `.Page.Title` etc. This also means that there are no concept of "nested inline shortcodes".
-也就意味这当前页面可以通过`.Page.Title`等访问。这也意味着没有"嵌套内联模版"的概念.
+也就意味这当前页面可以通过`.Page.Title`等访问。这也意味着没有"嵌套内联模板"的概念.
 
 The same inline shortcode can be reused later in the same content file, with different params if needed, using the self-closing syntax:
-相同的内联短代码模版也可以在相同的内容文件的后面重用,如果有必要使用不同的参数，使用自我闭合的模式.
+相同的内联短代码模板也可以在相同的内容文件的后面重用,如果有必要使用不同的参数，使用自我闭合的模式.
 
  ```go-text-template
 {{</* time.inline /*/>}}

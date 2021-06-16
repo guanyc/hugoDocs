@@ -67,7 +67,7 @@ and taxonomy pages will be rendered below `/` in English (your default content l
 基于上面配置, 所有内容、sitemap、RSS feeds、导航和标签页在英语中会呈现在`/`路径下, 在法语中会在`/fr`路径下.
 
 When working with front matter `Params` in [single page templates][singles], omit the `params` in the key for the translation.
-在[single page templates][singles]单页模板中处理前端设置的`Params`时, 请忽略翻译键中的`params`.
+在[single page templates][singles]单页模板中处理前言设定的`Params`时, 请忽略翻译键中的`params`.
 
 `defaultContentLanguage` sets the project's default language. If not set, the default language will be `en`.
 `defaultContentLanguage`设置项目的缺省语言。如果不设置, 默认语言是`en`.
@@ -258,7 +258,7 @@ By having the same **path and basename** (relative to their language content dir
 ### 忽略默认链接 Bypassing default linking.
 
 Any pages sharing the same `translationKey` set in front matter will be linked as translated pages regardless of basename or location.
-任何页面如果在前端设置中设置了相同的 `translationKey` 键值, 他们会被链接在一起，并不考虑他们的基础名称或者位置。
+任何页面如果在前言设定中设置了相同的 `translationKey` 键值, 他们会被链接在一起，并不考虑他们的基础名称或者位置。
 
 
 考虑下面例子:
@@ -273,7 +273,7 @@ translationKey: "about"
 ```
 
 By setting the `translationKey` front matter param to `about` in all three pages, they will be __linked__ as translated pages.
-因为在所有三个页面的前端设置都设置了 `translationKey`的相同值, 他们会作为翻译页面__链接__在一起。
+因为在所有三个页面的前言设定都设置了 `translationKey`的相同值, 他们会作为翻译页面__链接__在一起。
 
 
 ### 永久链接本地化 Localizing permalinks
@@ -282,7 +282,7 @@ Because paths and filenames are used to handle linking, all translated pages wil
 因为路径和文件名称用于处理链接, 所有的翻译页面会共享相同的URL(语言子目录除外)
 
 To localize the URLs, the [`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) or [`url`]({{< ref "/content-management/organization/index.md#url" >}}) front matter param can be set in any of the non-default language file.
-需要本地化URLs, 前端设定的[`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) or [`url`]({{< ref "/content-management/organization/index.md#url" >}})参数可以在非默认语言文件中设定。
+需要本地化URLs, 前言设定的[`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) or [`url`]({{< ref "/content-management/organization/index.md#url" >}})参数可以在非默认语言文件中设定。
 
 For example, a French translation (`content/about.fr.md`) can have its own localized slug.
 一个例子, 法国翻译版本(`content/about.fr.md`)可以具有它自己的本地化slug:
@@ -337,7 +337,7 @@ To create a list of links to translated content, use a template similar to the f
 {{< /code >}}
 
 The above can be put in a `partial` (i.e., inside `layouts/partials/`) and included in any template, whether a [single content page][contenttemplate] or the [homepage][]. It will not print anything if there are no translations for a given page.
-上面代码可以放在一个`partial`模版中(在 `layouts/partials/`目录中), 可以被任何模版包含，一个[独立内容页][contenttemplate] 或者 [首页][homepage]模版。如果特定页面没有任何翻译页面, Hugo不会打印任何内容.
+上面代码可以放在一个`partial`模板中(在 `layouts/partials/`目录中), 可以被任何模板包含，一个[独立内容页][contenttemplate] 或者 [首页][homepage]模板。如果特定页面没有任何翻译页面, Hugo不会打印任何内容.
 
 上面使用了[`i18n` function][i18func], 下节介绍.
 
@@ -370,7 +370,7 @@ Translations are collected from the `themes/<THEME>/i18n/` folder (built into th
 
 ### Query basic translation
 
-在模版内, 这样使用 `i18n` 函数:
+在模板内, 这样使用 `i18n` 函数:
 
 ```
 {{ i18n "home" }}
@@ -469,7 +469,7 @@ At the time of this writing, Go does not yet have support for internationalized 
 ~~~
 
 ...then index the non-English date names in your templates like so:
-然后在模版中引用非英语日期名称，类似这样:
+然后在模板中引用非英语日期名称，类似这样:
 
 ~~~html
 <time class="post-date" datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` | safeHTML }}">

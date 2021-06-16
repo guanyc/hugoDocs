@@ -24,7 +24,7 @@ With the use of the `.Summary` [page variable][pagevariables], Hugo generates su
 
 * 自动截取摘要 Automatic Summary Split
 * 手工截取摘要 Manual Summary Split
-* 前端设定设置摘要 Front Matter Summary
+* 前言设定设置摘要 Front Matter Summary
 
 在摘要上附上到达原文的链接是很自然的想法，一个常见的设计模式是以"阅读更多..."按钮的形式构建这个链接.
  参考[页面变量][pagevariables]中`.RelPermalink`, `.Permalink`, 和 `.Truncated`文档.
@@ -64,13 +64,13 @@ Pros 支持
 : 自由，改进的显示。所有HTML标签和格式都被保留
 
 Cons 反对
-: 内容作者需要更多工作。他们需要敲键盘输入<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> ( `# more` 在 [org content][org]文档中)在每个内容文件中. 这个可以通过在[原型archetype](/content-management/archetypes/)中在前端设置后面添加摘要分隔来自动化完成。
+: 内容作者需要更多工作。他们需要敲键盘输入<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> ( `# more` 在 [org content][org]文档中)在每个内容文件中. 这个可以通过在[原型archetype](/content-management/archetypes/)中在前言设定后面添加摘要分隔来自动化完成。
 
 {{% warning "Be Precise with the Summary Divider" %}}
 注意正确输入<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> 都是小写并且没有空白。
 {{% /warning %}}
 
-### 前端设置摘要 Front Matter Summary
+### 前言设定摘要 Front Matter Summary
 
 You might want your summary to be something other than the text that starts the article.  In this case you can provide a separate summary in the `summary` variable of the article front matter.
 您可能想内容摘要是与文章开头文本不同的一些内容。这种需求可以通过在文章的front matter部分提供一个不同摘要文本的`summary`变量来实现。
@@ -88,7 +88,7 @@ Because there are multiple ways in which a summary can be specified it is useful
 正如下面这样:
 
 1. 如果文章中存在<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code>摘要分隔符，则该摘要文本直到分隔符，将按照手动摘要拆分方法获得
-2. 如果文章的前端设置中包含`summary` 变量，变量的值通过前端设置摘要法获得
+2. 如果文章的前言设定中包含`summary` 变量，变量的值通过前言设定摘要法获得
 3. 文章开始的文本内容会被自动摘要截取法使用
 
 {{% warning "Competing selections" %}}

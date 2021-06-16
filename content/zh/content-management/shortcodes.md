@@ -273,14 +273,14 @@ The `instagram`-shortcode refers an endpoint of Instagram's API, that's deprecat
 
 ### `param` 参数
 
-从当前页面的前端设置的变量 `Page's` 参数集合中获得某个值，如果没有得到，缺省使用站点的参数值。
+从当前页面的前言设定的变量 `Page's` 参数集合中获得某个值，如果没有得到，缺省使用站点的参数值。
 如果在两处都没有发现指定键的参数值，会在日志中记录`ERROR`信息.
 
 ```bash
 {{</* param testparam */>}}
 ```
 
-`testparam`是页面在前端设置中设置的值为`Hugo Rocks!`的参数键，上面的输出是这样:
+`testparam`是页面在前言设定中设置的值为`Hugo Rocks!`的参数键，上面的输出是这样:
 
 {{< param testparam >}}
 

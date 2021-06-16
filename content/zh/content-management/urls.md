@@ -44,7 +44,7 @@ permalinks:
 {{< /code-toggle >}}
 
 Only the content under `posts/` will have the new URL structure. For example, the file `content/posts/sample-entry.md` with `date: 2017-02-27T19:20:00-05:00` in its front matter will render to `public/2017/02/sample-entry/index.html` at build time and therefore be reachable at `https://example.com/2017/02/sample-entry/`.
-仅仅在 `posts/` 下面的内容会拥有这个新的URL结构。比如文件`content/posts/sample-entry.md` 在前端设置中设置了日期`date: 2017-02-27T19:20:00-05:00`在Hugo构建时会输出到`public/2017/02/sample-entry/index.html`, 进而可以在`https://example.com/2017/02/sample-entry/`访问到。
+仅仅在 `posts/` 下面的内容会拥有这个新的URL结构。比如文件`content/posts/sample-entry.md` 在前言设定中设置了日期`date: 2017-02-27T19:20:00-05:00`在Hugo构建时会输出到`public/2017/02/sample-entry/index.html`, 进而可以在`https://example.com/2017/02/sample-entry/`访问到。
 
 To configure the `permalinks` option for pages in the "root" section, use **/** as the key:
 为根块中的页面配置`permalinks`永久链接选项，使用**/**作永久链接的键
@@ -103,7 +103,7 @@ The following is a list of values that can be used in a `permalink` definition i
 
 `:slug`
 : the content's slug (or title if no slug is provided in the front matter)
-内容的slug(或者是title，如果没有在前端设置中提供slug)
+内容的slug(或者是title，如果没有在前言设定中提供slug)
 
 `:filename`
 : the content's filename (without extension)  内容的文件名(不包含扩展名)
@@ -123,7 +123,7 @@ The following is a list of values that can be used in a `permalink` definition i
 ### 别名举例
 
 Let's assume you create a new piece of content at `content/posts/my-awesome-blog-post.md`. The content is a revision of your previous post at `content/posts/my-original-url.md`. You can create an `aliases` field in the front matter of your new `my-awesome-blog-post.md` where you can add previous paths. The following examples show how to create this field in TOML and YAML front matter, respectively.
-假设您在`content/posts/my-awesome-blog-post.md`创建了新的内容。这个内容是原先位于`content/posts/my-original-url.md`的内容的修订版。 您可以在新内容`my-awesome-blog-post.md`的前端设置中创建`aliases`，添加原文章的路径作为alias的一个值。下面例子中显示了如何在TOML和YAML前端设置中分别创建这个field.
+假设您在`content/posts/my-awesome-blog-post.md`创建了新的内容。这个内容是原先位于`content/posts/my-original-url.md`的内容的修订版。 您可以在新内容`my-awesome-blog-post.md`的前言设定中创建`aliases`，添加原文章的路径作为alias的一个值。下面例子中显示了如何在TOML和YAML前言设定中分别创建这个field.
 
 #### TOML Front Matter
 
@@ -170,7 +170,7 @@ Hugo 版本0.55开始也可以使用相对页面的别名，` /es/posts/my-origi
 
 当别名声明后, HUGO会创建一个匹配别名条目的目录. 在这个目录中Hugo创建一个`.html`文件，文件中声明页面的规范化URL和新的重定向目标
 
-比如, 一个内容文件`posts/my-intended-url.md`具有如下的前端设定:
+比如, 一个内容文件`posts/my-intended-url.md`具有如下的前言设定:
 
 ```
 ---
@@ -300,12 +300,12 @@ Or, if you are on Windows and do not have `grep` installed:
 hugo config | FINDSTR /I canon
 ```
 
-## 前端设置中设定URL
+## 前言设定中设定URL
 
 In addition to specifying permalink values in your site configuration for different content sections, Hugo provides even more granular control for individual pieces of content.
 在站点配置中为不同内容块声明链接外，Hugo对单独页面提供了更细粒度的控制
 
-在单独页面前端设置中可以设置`slug`和`url`。
+在单独页面前言设定中可以设置`slug`和`url`。
 更多关于构建时内容目的地的信息，请参考[Content Organization][contentorg].
 
 从Hugo 0.55开始，可以使用相对于当前站点上下文(语言)的相对URL，这使得维护变得简单。

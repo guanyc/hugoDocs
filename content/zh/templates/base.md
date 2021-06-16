@@ -31,7 +31,7 @@ toc: true
 
 ## 定义基础模板
 
-下面例子定义了一个简单的基础模版`_default/baseof.html`. 作为一个缺省模板, 它是所有页面呈现的外壳，除非重新指明了接近模板查询顺序开始的另一个`*baseof.html`.
+下面例子定义了一个简单的基础模板`_default/baseof.html`. 作为一个缺省模板, 它是所有页面呈现的外壳，除非重新指明了接近模板查询顺序开始的另一个`*baseof.html`.
 
 {{< code file="layouts/_default/baseof.html" download="baseof.html" >}}
 <!DOCTYPE html>

@@ -23,24 +23,24 @@ Homepage is a `Page` and therefore has all the [page variables][pagevars] and [s
 
 {{% note "The Only Required Template" %}}
 The homepage template is the *only* required template for building a site and therefore useful when bootstrapping a new site and template. It is also the only required template if you are developing a single-page website.
-首页模版是构建站点*唯一*必须的模板, 因此有助于构建新站点和其他模板。如果在开发单页面模板，首页模版也是唯一需要的模版
+首页模板是构建站点*唯一*必须的模板, 因此有助于构建新站点和其他模板。如果在开发单页面模板，首页模板也是唯一需要的模板
 {{% /note %}}
 
 {{< youtube ut1xtRZ1QOA >}}
 
-## 首页模版查询顺序
+## 首页模板查询顺序
 
 参考 [Template Lookup](/templates/lookup-order/).
 
-## 为首页添加内容和前端设定
+## 为首页添加内容和前言设定
 
-首页, 同其他[Hugo 列表页][lists]类似，可以接受 `_index.md` 文件里的内容和前端设置. 这个文件应该位于`content`的根目录(也就是`content/_index.md`).  然后可以给首页添加主题内容和元数据，和其他内容文件一样。
+首页, 同其他[Hugo 列表页][lists]类似，可以接受 `_index.md` 文件里的内容和前言设定. 这个文件应该位于`content`的根目录(也就是`content/_index.md`).  然后可以给首页添加主题内容和元数据，和其他内容文件一样。
 
-参考下面的首页模版或者[内容组织][contentorg], 获得更多关于在列表页中添加内容和前端设定时`_index.md`文件的作用的信息。
+参考下面的首页模板或者[内容组织][contentorg], 获得更多关于在列表页中添加内容和前言设定时`_index.md`文件的作用的信息。
 
-## 首页模版例子
+## 首页模板例子
 
-下面是首页模版的例子, 使用了[partial][partials], [base][] 模版和位于`content/_index.md`的内容文件来填充`{{.Title}}` 和 `{{.Content}}` [页面变量][pagevars].
+下面是首页模板的例子, 使用了[partial][partials], [base][] 模板和位于`content/_index.md`的内容文件来填充`{{.Title}}` 和 `{{.Content}}` [页面变量][pagevars].
 
 {{< code file="layouts/index.html" download="index.html" >}}
 {{ define "main" }}

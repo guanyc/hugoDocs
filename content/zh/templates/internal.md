@@ -1,7 +1,7 @@
 ---
-title: Internal Templates
-linktitle: Internal Templates
-description: Hugo ships with a group of boilerplate templates that cover the most common use cases for static websites.
+title: 内置模版
+linktitle: 内置模版
+description: Hugo内置了一组样板模板, 涵盖静态网站最常见的用例
 date: 2017-03-06
 publishdate: 2017-03-06
 lastmod: 2017-03-06
@@ -22,24 +22,27 @@ wip: true
 code: https://github.com/gohugoio/hugo/blob/e445c35d6a0c7f5fc2f90f31226cd1d46e048bbc/tpl/template_embedded.go#L147 -->
 
 {{% warning %}}
-While the following internal templates are called similar to partials, they do *not* observe the partial template lookup order.
+While the following internal templates are called similar to partials, they do *not* observe the partial template lookup order. 请注意虽然下面的内置模板与部分模板的调用方式相似, 但是内置模板*不*遵守部分模版的查询解析顺序.
 {{% /warning %}}
 
-## Google Analytics
+## Google Analytics Google跟踪分析
 
 Hugo ships with internal templates for Google Analytics tracking, including both synchronous and asynchronous tracking codes.
+Hugo内置了Google分析跟踪的模版，包括同步和异步跟踪的代码.
 
-### Configure Google Analytics
+### Configure Google Analytics 配置Google分析
 
 Provide your tracking id in your configuration file:
+在站点配置文件中提供跟踪id:
 
 {{< code-toggle file="config" >}}
 googleAnalytics = "UA-36598421-1"
 {{</ code-toggle >}}
 
-### Use the Google Analytics Template
+### Use the Google Analytics Template 使用Google分析模版
 
 You can then include the Google Analytics internal template:
+然后可以下面这样包含Google分析的内置模版:
 
 ```
 {{ template "_internal/google_analytics.html" . }}
@@ -51,40 +54,49 @@ You can then include the Google Analytics internal template:
 ```
 
 A `.Site.GoogleAnalytics` variable is also exposed from the config.
+通过配置文件配置的信息可以通过`.Site.GoogleAnalytics`变量访问.
 
-## Disqus
+## Disqus Disqus评论模版
 
 Hugo also ships with an internal template for [Disqus comments][disqus], a popular commenting system for both static and dynamic websites. In order to effectively use Disqus, you will need to secure a Disqus "shortname" by [signing up for the free service][disqussignup].
+Hugo也包括[Disqus comments][disqus]评论的内置模版，这是一个对于静态站点和动态站点都很流行的评论系统。
+为有效使用Disqus,您需要[注册Disqus 免费服务][disqussignup]获得一个"shortname"短代码.
 
-### Configure Disqus
+### Configure Disqus 配置Disqus
 
-To use Hugo's Disqus template, you first need to set a single value in your site's `config.toml` or `config.yml`:
+To use Hugo's Disqus template, you first need to set a single value in your site's `config.toml` or `config.yml`: 为使用Disqus模版，首先需要在站点配置文件`config.xml`中设置短代码的键值:
 
 {{< code-toggle file="config" >}}
 disqusShortname = "yourdiscussshortname"
 {{</ code-toggle >}}
 
 You also have the option to set the following in the front matter for a given piece of content:
+也可以对于指定内容在前言设置部分设置如下的信息:
 
 * `disqus_identifier`
 * `disqus_title`
 * `disqus_url`
 
-### Use the Disqus Template
+### Use the Disqus Template 使用Disqus模版
 
 To add Disqus, include the following line in templates where you want your comments to appear:
+在页面中添加如下模版代码，将显示评论代码
 
 ```
 {{ template "_internal/disqus.html" . }}
 ```
 
 A `.Site.DisqusShortname` variable is also exposed from the config.
+可以通过`.Site.DisqusShortname`变量访问配置的短代码.
 
-### Conditional Loading of Disqus Comments
+### Conditional Loading of Disqus Comments Disqus评论的条件加载
 
 Users have noticed that enabling Disqus comments when running the Hugo web server on `localhost` (i.e. via `hugo server`) causes the creation of unwanted discussions on the associated Disqus account.
+有人注意到在本地运行Hugo web服务的时候启用disqus评论会在disqus账户中创建不需要的评论:
 
 You can create the following `layouts/partials/disqus.html`:
+
+可以像下面这样创建短代码 `layouts/partials/disqus.html`:
 
 {{< code file="layouts/partials/disqus.html" download="disqus.html" >}}
 <div id="disqus_thread"></div>
@@ -107,8 +119,10 @@ You can create the following `layouts/partials/disqus.html`:
 {{< /code >}}
 
 The `if` statement skips the initialization of the Disqus comment injection when you are running on `localhost`.
+上面的代码中`if`语句将跳过在`localhost`运行时插入Disqus评论初始化的代码.
 
 You can then render your custom Disqus partial template as follows:
+然后像下面这样调用部分模版:
 
 ```
 {{ partial "disqus.html" . }}
@@ -117,6 +131,7 @@ You can then render your custom Disqus partial template as follows:
 ## Open Graph
 An internal template for the [Open Graph protocol](https://ogp.me/), metadata that enables a page to become a rich object in a social graph.
 This format is used for Facebook and some other sites.
+
 
 ### Configure Open Graph
 

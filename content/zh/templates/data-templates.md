@@ -1,7 +1,7 @@
 ---
-title: 数据模版 Data Templates
-linktitle: 数据模版
-description: 在Hugo内建的变量外, 您可以在模版或者短代码中声明自己的定制数据,可以从本地数据源或者远程动态数据源获取数据 In addition to Hugo's built-in variables, you can specify your own custom data in templates or shortcodes that pull from both local and dynamic sources.
+title: 数据模板 Data Templates
+linktitle: 数据模板
+description: 在Hugo内建的变量外, 您可以在模板或者短代码中声明自己的定制数据,可以从本地数据源或者远程动态数据源获取数据 In addition to Hugo's built-in variables, you can specify your own custom data in templates or shortcodes that pull from both local and dynamic sources.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-03-12
@@ -28,7 +28,7 @@ Hugo支持从位于hugo项目根目录下的**data**目录的YAML、JSON或者TO
 ## 数据目录 The Data Folder
 
 The `data` folder is where you can store additional data for Hugo to use when generating your site. Data files aren't used to generate standalone pages; rather, they're meant to be supplemental to content files. This feature can extend the content in case your front matter fields grow out of control. Or perhaps you want to show a larger dataset in a template (see example below). In both cases, it's a good idea to outsource the data in their own files.
-`data`目录是存储hugo 创建站点时hugo使用的其他数据的目录。Data数据文件不用于生成单独页面,他们是内容文件的补充。这个特性在前端设置字段增长太多失去控制时，可以优雅的扩展内容文件。或者可能您想在模版中显示非常大的数据集(参考下面). 这两种情形中，将数据保存在它们自己的文件中都是好主意.
+`data`目录是存储hugo 创建站点时hugo使用的其他数据的目录。Data数据文件不用于生成单独页面,他们是内容文件的补充。这个特性在前言设定字段增长太多失去控制时，可以优雅的扩展内容文件。或者可能您想在模板中显示非常大的数据集(参考下面). 这两种情形中，将数据保存在它们自己的文件中都是好主意.
 
 These files must be YAML, JSON, or TOML files (using the `.yml`, `.yaml`, `.json`, or `.toml` extension). The data will be accessible as a `map` in the `.Site.Data` variable.
 这些文件必须是YAML、JSON、或者TOML格式的文件(使用`.yml`, `.yaml`, `.json` 或者 `.toml`文件扩展名).
@@ -37,13 +37,13 @@ These files must be YAML, JSON, or TOML files (using the `.yml`, `.yaml`, `.json
 ## 主题中使用数据文件 Data Files in Themes
 
 Data Files can also be used in [Hugo themes][themes] but note that theme data files follow the same logic as other template files in the [Hugo lookup order][lookup] (i.e., given two files with the same name and relative path, the file in the root project `data` directory will override the file in the `themes/<THEME>/data` directory).
-数据文件也可以使用在[Hugo Themes][themes]中, 但是请注意主题的数据文件遵循和其他模版数据的[Hugo lookup order][lookup]解析查询顺序相同的逻辑(比如,假设两个文件具有相同的名称和相对路径,在项目根目录的`data`目录中的文件会具有较高优先级、重载`themes/<THEME>/data`目录中的数据文件).
+数据文件也可以使用在[Hugo Themes][themes]中, 但是请注意主题的数据文件遵循和其他模板数据的[Hugo lookup order][lookup]解析查询顺序相同的逻辑(比如,假设两个文件具有相同的名称和相对路径,在项目根目录的`data`目录中的文件会具有较高优先级、重载`themes/<THEME>/data`目录中的数据文件).
 
 Therefore, theme authors should take care to not include data files that could be easily overwritten by a user who decides to [customize a theme][customize]. For theme-specific data items that shouldn't be overridden, it can be wise to prefix the folder structure with a namespace; e.g. `mytheme/data/<THEME>/somekey/...`. To check if any such duplicate exists, run hugo with the `-v` flag.
 因此、主题作者需要注意不要包含可能会很容易被决定[定制主题][customize]的用户重载的数据文件。对于主题特定的数据单元不应该被重载的，最好使用目录结构的前缀作为命名空间;比如`mytheme/data/<THEME>/somekey...`. 为检查是否包含这样的重复数据文件,请使用`-v`标志运行Hugo. 
 
 The keys in the map created with data templates from data files will be a dot-chained set of `path`, `filename`, and `key` in file (if applicable).
-从数据文件中读取的数据模版中创建的字典键是`path`、`filename`、和文件中`key`(如果可以提取的)的点`.`链.
+从数据文件中读取的数据模板中创建的字典键是`path`、`filename`、和文件中`key`(如果可以提取的)的点`.`链.
 
 This is best explained with an example:
 使用例子解释最好:
@@ -86,7 +86,7 @@ The list of bass players can be accessed via `.Site.Data.jazz.bass`, a single ba
 贝斯手的列表可以通过变量 `.Site.Data.jazz.bass`访问, 单独的贝斯手可以通过在变量后面加上文件名后缀访问, 如`.Site.Data.jazz.bass.jacopastorius`.
 
 You can now render the list of recordings for all the bass players in a template:
-现在可以访问模版中所有贝斯手的唱片列表:
+现在可以访问模板中所有贝斯手的唱片列表:
 
 ```
 {{ range $.Site.Data.jazz.bass }}
@@ -131,7 +131,7 @@ You can use the following code to render the `Short Description` in your layout:
 ```
 
 Note the use of the [`markdownify` template function][markdownify]. This will send the description through the Blackfriday Markdown rendering engine.
-注意 [`markdownify` 模版函数][markdownify]的使用. 这会将描述文本发送给markdown呈现引擎.
+注意 [`markdownify` 模板函数][markdownify]的使用. 这会将描述文本发送给markdown呈现引擎.
 
 <!-- begin "Data-drive Content" page -->
 
@@ -139,13 +139,13 @@ Note the use of the [`markdownify` template function][markdownify]. This will se
 
 In addition to the [data files](/extras/datafiles/) feature, Hugo also has a "data-driven content" feature, which lets you load any [JSON](https://www.json.org/) or [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file from nearly any resource.
 
-在 [数据文件](/extras/datafiles/) 特性之外, Hugo 也支持"数据驱动内容" 的特性,此特性使得您可以从几乎任何资源处加载任何[JSON](https://www.json.org/) 或者 [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) 文件. 数据驱动的内容当前包含两个函数 `getJSON` 和 `getCSV`, 当然这两个函数在所有模版文件中都可用.
+在 [数据文件](/extras/datafiles/) 特性之外, Hugo 也支持"数据驱动内容" 的特性,此特性使得您可以从几乎任何资源处加载任何[JSON](https://www.json.org/) 或者 [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) 文件. 数据驱动的内容当前包含两个函数 `getJSON` 和 `getCSV`, 当然这两个函数在所有模板文件中都可用.
 
 ## 实现细节 Implementation details
 
 ### 对URL调用函数 Call the Functions with a URL
 
-在模版中, 可以这样调用函数:
+在模板中, 可以这样调用函数:
 In your template, call the functions like this:
 
 ```
@@ -198,7 +198,7 @@ first 5 gists for a GitHub user:
 ### CSV文件例子 Example for CSV files
 
 For `getCSV`, the one-character-long separator must be placed in the first position followed by the URL. The following is an example of creating an HTML table in a [partial template][partials] from a published CSV:
-对于 `getCSV`, 一个字符长的分隔符必须放在跟随URL后面的第一个参数的位置. 下面是从发布的CSV构建的[部分模版][partials]中创建HTML表格的例子:
+对于 `getCSV`, 一个字符长的分隔符必须放在跟随URL后面的第一个参数的位置. 下面是从发布的CSV构建的[部分模板][partials]中创建HTML表格的例子:
 
 
 {{< code file="layouts/partials/get-csv.html" >}}

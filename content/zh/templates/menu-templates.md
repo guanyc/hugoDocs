@@ -117,7 +117,7 @@ The above is all that's needed. But if you want custom menu items, e.g. changing
 请注意标志符 `identifier` *必须* 和区块名称匹配.
 {{% /note %}}
 
-## 在页面前端设置中设置菜单条目 Menu Entries from the Page's front matter
+## 在页面前言设定中设置菜单条目 Menu Entries from the Page's front matter
 
 It's also possible to create menu entries from the page (i.e. the `.md`-file).
 从页面(`.md`文件)中创建菜单条目也是可能的.
@@ -149,14 +149,14 @@ like in the example above.
 
 If you use the front matter method of defining menu entries, you'll get access to the `.Page` variable.
 This allows to use every variable that's reachable from the [page variable](/variables/page/).
-如果使用前端设置中定义菜单条目的方法, 那么可以访问`.Page`变量. 这样允许您使用可以从 [page variable](/variables/page/)访问的每个变量.
+如果使用前言设定中定义菜单条目的方法, 那么可以访问`.Page`变量. 这样允许您使用可以从 [page variable](/variables/page/)访问的每个变量.
 
 This variable is only set when the menu entry is defined in the page's front matter.
 Menu entries from the site config don't know anything about `.Page`.
-这个变量仅在菜单条目是在页面前端设置中定义的时候设置。在站点配置文件中定义的菜单条目对`.Page`一无所知.
+这个变量仅在菜单条目是在页面前言设定中定义的时候设置。在站点配置文件中定义的菜单条目对`.Page`一无所知.
 
 That's why you have to use the go template's `with` keyword or something similar in your templating language.
-所以需要使用go模板的`with`关键字或者您模版语言中其他类似的功能.
+所以需要使用go模板的`with`关键字或者您模板语言中其他类似的功能.
 
 Here's an example:
 这是一个例子:

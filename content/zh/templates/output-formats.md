@@ -155,7 +155,7 @@ Formats are set based on that.
 This can be changed by defining an `outputs` list of output formats in either
 the `Page` front matter or in the site configuration (either for all sites or
 per language).
-在页面的前端设置或者网站配置文件(对所有站点或者每个语言)中定义输出格式的`outputs`列表可以定制输出格式.
+在页面的前言设定或者网站配置文件(对所有站点或者每个语言)中定义输出格式的`outputs`列表可以定制输出格式.
 
 站点配置的例子:
 
@@ -181,9 +181,9 @@ per language).
 * 输出的定义是针对每一个 [`Page` `Kind`][page_kinds] (`page`, `home`, `section`, `taxonomy`, or `term`).
 * 输出格式的名称(如 `HTML` `AMP`)必须和定义的*输出格式*的`Name`匹配The names.
 * 这些名称是大小写无关的.
-* 可以在内容页面的前端设置重载这个设置.
+* 可以在内容页面的前言设定重载这个设置.
 
-下面是一个内容文件的`YAML`前端设置的例子，定义了输出的`Page`的输出格式:
+下面是一个内容文件的`YAML`前言设定的例子，定义了输出的`Page`的输出格式:
 
 ```yaml
 ---

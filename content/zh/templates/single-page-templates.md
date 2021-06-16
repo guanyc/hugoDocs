@@ -1,7 +1,7 @@
 ---
-title: 单独页面模版
+title: 单独页面模板
 linktitle: 单独页面
-description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template. Hugo中内容的主要视图是单独页面. Hugo会显示每个提供了单独模版的Markdown文件.
+description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template. Hugo中内容的主要视图是单独页面. Hugo会显示每个提供了单独模板的Markdown文件.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-04-06
@@ -18,19 +18,19 @@ aliases: [/layout/content/]
 toc: true
 ---
 
-## 单独页面模版查询顺序 Single Page Template Lookup Order
+## 单独页面模板查询顺序 Single Page Template Lookup Order
 
 参考 [Template Lookup](/templates/lookup-order/).
 
 ## 例子 Example Single Page Templates
 
 Content pages are of the type `page` and will therefore have all the [page variables][pagevars] and [site variables][] available to use in their templates.
-类型 `page`的内容页面, 具有所有的 [page variables][pagevars] 页面变量和 [site variables][] 站点变量，可以在他们的模版中访问使用.
+类型 `page`的内容页面, 具有所有的 [page variables][pagevars] 页面变量和 [site variables][] 站点变量，可以在他们的模板中访问使用.
 
 ### `posts/single.html`
 
 This single page template makes use of Hugo [base templates][], the [`.Format` function][] for dates, the [`.WordCount` page variable][pagevars], and ranges through the single content's specific [taxonomies][pagetaxonomy]. [`with`][] is also used to check whether the taxonomies are set in the front matter.
-下面的单独页面模版使用了Hugo的[base templates][]基础模版,  处理日期的[`.Format` function][]函数, [`.WordCount` page variable][pagevars]页面变量, 遍历了单独页面内容的特定[taxonomies][pagetaxonomy].
+下面的单独页面模板使用了Hugo的[base templates][]基础模板,  处理日期的[`.Format` function][]函数, [`.WordCount` page variable][pagevars]页面变量, 遍历了单独页面内容的特定[taxonomies][pagetaxonomy].
 使用了[`with`][]函数检测前端是否设置了标签.
 
 {{< code file="layouts/posts/single.html" download="single.html" >}}

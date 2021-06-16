@@ -15,7 +15,7 @@ toc: true
 ---
 
 A **content type** is a way to organize your content. Hugo resolves the content type from either the `type` in front matter or, if not set, the first directory in the file path. E.g. `content/blog/my-first-event.md` will be of type `blog` if no `type` set.
-**内容类型**是组织内容的方式. hugo从前端设定中的`type`解析内容类型, 如果`type`没设定, 选择文件路径的第一个目录作为内容乐行。比如`content/blog/my-first-event.md`的类型会是`blog`如果`type`未设定.
+**内容类型**是组织内容的方式. hugo从前言设定中的`type`解析内容类型, 如果`type`没设定, 选择文件路径的第一个目录作为内容乐行。比如`content/blog/my-first-event.md`的类型会是`blog`如果`type`未设定.
 
 A content type is used to
 

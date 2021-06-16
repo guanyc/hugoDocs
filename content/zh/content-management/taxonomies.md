@@ -125,13 +125,13 @@ disableKinds = ["taxonomy","term"]
 ### 默认的目的 Default Destinations
 
 When taxonomies are used---and [taxonomy templates][] are provided---Hugo will automatically create both a page listing all the taxonomy's terms and individual pages with lists of content associated with each term. For example, a `categories` taxonomy declared in your configuration and used in your content front matter will create the following pages:
-当使用分类并且提供了[taxonomy templates][]分类模板---Hugo会自动创建展示所有分类条目的列表页面，以及为每一个条目创建单独页面展示条目相关的内容列表。 比如，在配置中声明的`categories`分类，在内容的前端设置中使用后Hugo会创建如下页面:
+当使用分类并且提供了[taxonomy templates][]分类模板---Hugo会自动创建展示所有分类条目的列表页面，以及为每一个条目创建单独页面展示条目相关的内容列表。 比如，在配置中声明的`categories`分类，在内容的前言设定中使用后Hugo会创建如下页面:
 
 * A single page at `example.com/categories/` that lists all the [terms within the taxonomy][]
 * [Individual taxonomy list pages][taxonomy templates] (e.g., `/categories/development/`) for each of the terms that shows a listing of all pages marked as part of that taxonomy within any content file's [front matter][]
 
 * 一个展示列出所有[分类下条目][terms within the taxonomy]的一个单独页面
-* 对分类内每个条目 创建[单独的标签列表页Individual taxonomy list pages][taxonomy templates] (比如 `/categories/development/`), 页面上列出在内容文件的前端设置[front matter][]中标明这个标签的所有页面
+* 对分类内每个条目 创建[单独的标签列表页Individual taxonomy list pages][taxonomy templates] (比如 `/categories/development/`), 页面上列出在内容文件的前言设定[front matter][]中标明这个标签的所有页面
 
 
 
@@ -168,7 +168,7 @@ If you want to disable all taxonomies altogether, see the use of `disableKinds` 
 
 {{% note %}}
 You can add content and front matter to your taxonomy list and taxonomy terms pages. See [Content Organization](/content-management/organization/) for more information on how to add an `_index.md` for this purpose.
-可以给标签列表页和标签条目页添加内容和前端设置。参考[内容组织](/content-management/organization/)获得如何为此目的添加`_index.md`的更多信息。
+可以给标签列表页和标签条目页添加内容和前言设定。参考[内容组织](/content-management/organization/)获得如何为此目的添加`_index.md`的更多信息。
 
 Much like regular pages, taxonomy list [permalinks](/content-management/urls/) are configurable, but taxonomy term page permalinks are not.
 和普通页面非常相似, 标签列表的[永久链接 permalinks](/content-management/urls/)是可以配置的, 不过分类条目页的永久链接不能设置。
@@ -186,13 +186,13 @@ Much like regular pages, taxonomy list [permalinks](/content-management/urls/) a
 Once a taxonomy is defined at the site level, any piece of content can be assigned to it, regardless of [content type][] or [content section][].
 当站点层级定义了标签，任何内容可以赋值这个标签，不论[内容类型][content type]或者[内容块][content section].
 
-Assigning content to a taxonomy is done in the [front matter][]. Simply create a variable with the *plural* name of the taxonomy and assign all terms you want to apply to the instance of the content type. 给内容赋值标签通过前端设置 [front matter][]内设定。 简单的使用标签的复数形式(英语)作为变量, 赋值所有想对内容实例应用的条目作为标签的值.
+Assigning content to a taxonomy is done in the [front matter][]. Simply create a variable with the *plural* name of the taxonomy and assign all terms you want to apply to the instance of the content type. 给内容赋值标签通过前言设定 [front matter][]内设定。 简单的使用标签的复数形式(英语)作为变量, 赋值所有想对内容实例应用的条目作为标签的值.
 
 {{% note %}}
 If you would like the ability to quickly generate content files with preconfigured taxonomies or terms, read the docs on [Hugo archetypes](/content-management/archetypes/).
 {{% /note %}} 如果喜欢快速生成具有预先配置的标签和条目的内容文件，请参考[Hugo archetypes](/content-management/archetypes/)的文档.
 
-### 例子: 前端设置标签
+### 例子: 前言设定标签
 
 {{< code-toggle copy="false">}}
 title = "Hugo: A fast and flexible static site generator"
@@ -232,7 +232,7 @@ Currently taxonomies only support the [default `weight => date` ordering of list
 ## Add custom metadata to a Taxonomy or Term
 
 If you need to add custom metadata to your taxonomy terms, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in it's front matter. Continuing with our 'Actors' example, let's say you want to add a Wikipedia page link to each actor. Your terms pages would be something like this:
-如果需要对标签条目添加定制的元数据，您需要创建创建条目页面在`/content/<TAXONOMY>/<TERM>/_index.md`, 在这个页面的前端设置中添加元数据。沿用上面的  'Actors'例子, 我们假设需要添加一个Wikipedia页面链接给每个演员。 标签条目页可能会像下面这样:
+如果需要对标签条目添加定制的元数据，您需要创建创建条目页面在`/content/<TAXONOMY>/<TERM>/_index.md`, 在这个页面的前言设定中添加元数据。沿用上面的  'Actors'例子, 我们假设需要添加一个Wikipedia页面链接给每个演员。 标签条目页可能会像下面这样:
 
 {{< code file="/content/actors/bruce-willis/_index.md" >}}
 ---

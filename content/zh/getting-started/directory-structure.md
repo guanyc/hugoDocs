@@ -41,7 +41,7 @@ toc: true
 以下部分是每个目录的高层概述，以及在Hugo文档中它们相应部分的链接。
 
 原型 [`archetypes`](/content-management/archetypes/)
-: 在Hugo中使用`hugo new`命令可以创建新的内容文件. 默认情况下，Hugo创建的新的内容文件至少设置了 `date`, `title` (从文件名推断出来), 和 `draft = true`. 这节省了时间，而且对于使用多种内容类型的站点来说提升了一致性。可以创建自己的 [原型][archetypes], 定制预先配置的前端设置.
+: 在Hugo中使用`hugo new`命令可以创建新的内容文件. 默认情况下，Hugo创建的新的内容文件至少设置了 `date`, `title` (从文件名推断出来), 和 `draft = true`. 这节省了时间，而且对于使用多种内容类型的站点来说提升了一致性。可以创建自己的 [原型][archetypes], 定制预先配置的前言设定.
 
 资源[`assets`][]
 : 保存将被[Hugo Pipes]({{< ref "/hugo-pipes" >}})处理的所有文件。 只有`.Permalink` 和 `.RelPermalink` 被使用的文件会被发布到 `public` 目录。 注意: 默认并没有创建资源目录。
